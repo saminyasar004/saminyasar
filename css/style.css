@@ -878,7 +878,7 @@ nav {
 } */
 
 ._924l {
-  display: none;
+  display: none !important;
 }
 
 /* footer section end */
