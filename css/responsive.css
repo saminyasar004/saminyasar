@@ -7,9 +7,18 @@
 * extra small: 240px
 */
 
+/* for max width: 1140px */
+
+@media screen and (max-width: 1140px) {
+  /* noting else. all elements are fit to screen. */
+}
+
 /* for max width: 960px */
 
 @media screen and (max-width: 960px) {
+  html {
+    font-size: 58.5%;
+  }
 }
 
 /* for max width: 720px */
@@ -21,6 +30,10 @@
 
   .row {
     width: 64rem;
+  }
+
+  h2:after {
+    top: 140%;
   }
 
   .navBar {
@@ -90,7 +103,7 @@
 
 @media screen and (max-width: 540px) {
   html {
-    font-size: 55.5%;
+    font-size: 52.5%;
   }
 
   .row {
@@ -156,5 +169,78 @@
   .serviceBox .serviceImageBox img {
     max-width: 85%;
     margin-right: 4%;
+  }
+}
+
+/* for max width: 450px */
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 45.5%;
+  }
+
+  .row {
+    width: 60rem;
+  }
+
+  .navBar {
+    display: none;
+  }
+
+  .mobileNavBar {
+    display: inherit;
+  }
+
+  .logo {
+    width: 30%;
+  }
+
+  .heroTextBox p,
+  .WhatIDoHead p,
+  .skillHead p,
+  .testimonialHead p {
+    width: 75%;
+  }
+
+  .WhatIDoBox {
+    width: 49.2%;
+  }
+
+  .WhatIDoDes .WhatIDoBox:nth-child(5) {
+    margin-left: 0;
+  }
+
+  .offerBox h3 {
+    width: 75%;
+    font-size: 2.3rem;
+  }
+
+  .offerBox h3:after {
+    top: 110%;
+  }
+
+  .offerBox p {
+    margin: 10% 0 5% 0;
+  }
+
+  .serviceBox {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3%;
+  }
+
+  .serviceBox h3,
+  .serviceBox p {
+    width: 100%;
+  }
+
+  .serviceBox h3:after {
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+
+  .serviceBox .serviceImageBox img {
+    max-width: 70%;
+    margin-right: 0;
   }
 }
