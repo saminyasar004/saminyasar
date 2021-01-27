@@ -27,21 +27,25 @@
       rel="stylesheet"
     />
     <!-- font awesome  -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    /> -->
     <!-- zmdi icon link -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.css"
-    />
+    /> -->
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="./icon/css/all.min.css" />
+    <!-- linking vendor stylesheet files -->
     <link rel="stylesheet" href="vendor/css/aos.css" />
     <link rel="stylesheet" href="vendor/css/grid.css" />
     <link rel="stylesheet" href="vendor/css/normalize.css" />
     <link rel="stylesheet" href="vendor/css/jquery.animatedheadline.css" />
     <link rel="stylesheet" href="vendor/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="vendor/css/owl.theme.default.min.css" />
+    <!-- lining main stylesheet files -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
@@ -65,7 +69,7 @@
     <!-- header section start -->
 
     <header class="headerSection">
-      <div class="row">
+      <div class="row navBar">
         <nav>
           <div class="logo">
             <a href="#">
@@ -82,6 +86,31 @@
           </div>
         </nav>
       </div>
+      <!-- mobile navigation start -->
+      <div class="row mobileNavBar">
+        <nav>
+          <div class="logo">
+            <a href="#">
+              <img src="img/samin_logo_white.png" alt="Samin Yasar" />
+            </a>
+          </div>
+          <div class="hamBurger">
+            <i id="hamburgerIcon" class="fa fa-bars"></i>
+            <!-- <span></span>
+            <span></span>
+            <span></span> -->
+          </div>
+          <div id="mobileMenu" class="mobileMenu">
+            <ul>
+              <li><a class="activeLink" href="#">home</a></li>
+              <li><a href="#">services</a></li>
+              <li><a href="#">about</a></li>
+              <li><a href="#">contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- mobile navigation end -->
       <div class="row">
         <div class="heroContainer">
           <div class="heroTextBox">
@@ -145,7 +174,7 @@
             </p>
           </div>
           <div class="col1 span-1-of-3 WhatIDoBox">
-            <i class="fa fa-wordpress"></i>
+            <i class="fab fa-wordpress"></i>
             <h3>wordpress</h3>
             <p>
               Wordpress, Magento, E-Commerce, Prestashop Theme Development &
@@ -153,7 +182,8 @@
             </p>
           </div>
           <div class="col1 span-1-of-3 WhatIDoBox">
-            <i class="zmdi zmdi-devices"></i>
+            <!-- <i class="zmdi zmdi-devices"></i> -->
+            <i class="fa fa-mobile"></i>
             <h3>responsive design</h3>
             <p>
               Responsive Design which will be working almost all browsers and
@@ -214,14 +244,6 @@
             <span class="percent">90%</span>
             <div
               id="skill3"
-              class="demo"
-              data-width="90"
-              data-background="#1DD881"
-            ></div>
-            <span>JQuery</span>
-            <span class="percent">90%</span>
-            <div
-              id="skill4"
               class="demo"
               data-width="90"
               data-background="#1DD881"
@@ -475,8 +497,7 @@
 
     <!-- facebook mesasge chat end -->
 
-    <!-- javascript files -->
-
+    <!-- linking javascript files -->
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/script.js"></script>
@@ -487,6 +508,7 @@
     <script src="vendor/js/aos.js"></script>
     <script src="vendor/js/simple-skillbar.js"></script>
     <script src="vendor/js/owl.carousel.min.js"></script>
+
     <script>
       $(function () {
         $(".selector").animatedHeadline({
@@ -506,16 +528,12 @@
         smartSpeed: 200,
         fluidSpeed: 1000,
         autoplaySpeed: 500,
-        // responsiveClass: true,
-        // responsive: {
-        //     0: {
-        //         items: 1,
-        //     },
-        //     767: {
-        //         items: 1,
-        //     }
-
-        // }
+        responsiveClass: true,
+        responsive: {
+          540: {
+            items: 1,
+          },
+        },
       });
     </script>
   </body>
