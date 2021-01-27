@@ -210,17 +210,33 @@
     margin-left: 0;
   }
 
+  .offerBox {
+    text-align: center;
+  }
+
+  .offerBox:last-child {
+    padding: 10% 0;
+  }
+
+  .offerBox:first-child {
+    padding: 0 0;
+  }
+
   .offerBox h3 {
-    width: 75%;
+    width: 90%;
     font-size: 2.3rem;
+    margin: auto;
   }
 
   .offerBox h3:after {
-    top: 110%;
+    top: 180%;
+    left: 50%;
+    transform: translate(-50%, -100%);
   }
 
   .offerBox p {
-    margin: 10% 0 5% 0;
+    width: 85%;
+    margin: 10% auto 5% auto;
   }
 
   .serviceBox {
@@ -242,5 +258,25 @@
   .serviceBox .serviceImageBox img {
     max-width: 70%;
     margin-right: 0;
+  }
+}
+
+/* for max width: 240px */
+
+@media screen and (max-width: 240px) {
+  html {
+    font-size: 45.5%;
+  }
+
+  .row {
+    width: 32rem;
+  }
+
+  .logo {
+    width: 60%;
+  }
+
+  .ah-headline {
+    font-size: 2.4rem;
   }
 }
