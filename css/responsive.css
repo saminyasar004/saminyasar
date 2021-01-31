@@ -351,11 +351,11 @@
 
 @media screen and (min-width: 321px) and (max-width: 350px) {
   html {
-    font-size: 45.5%;
+    font-size: 35.5%;
   }
 
   .row {
-    width: 40rem;
+    width: 60rem;
   }
 
   p {
