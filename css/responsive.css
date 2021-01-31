@@ -272,6 +272,10 @@
     width: 32rem;
   }
 
+  p {
+    font-size: 1.6rem;
+  }
+
   .logo {
     width: 60%;
   }
@@ -306,5 +310,17 @@
 
   .skillHead p {
     margin: 10% auto;
+  }
+
+  .skillBox {
+    width: 85%;
+  }
+
+  .offerBox h3:after {
+    top: 128%;
+  }
+
+  .offerBox p {
+    margin: 15% auto 10% auto;
   }
 }
