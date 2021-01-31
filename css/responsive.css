@@ -276,6 +276,10 @@
     font-size: 1.6rem !important;
   }
 
+  .btn {
+    border: 0.3rem solid var(--base-color);
+  }
+
   .logo {
     width: 60%;
   }
