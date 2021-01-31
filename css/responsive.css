@@ -265,7 +265,7 @@
 /* for max width: 320px */
 
 /* @media screen and (max-width: 320px) { */
-@media screen and (mix-width: 320px) and (max-width: 241px) {
+@media screen and (max-width: 320px) and (min-width: 241px) {
   html {
     font-size: 45.5%;
   }
