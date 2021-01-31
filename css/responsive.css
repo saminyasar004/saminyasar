@@ -264,8 +264,92 @@
 
 /* for max width: 320px */
 
-/* @media screen and (max-width: 320px) { */
-@media screen and (max-width: 320px) and (min-width: 241px) {
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 45.5%;
+  }
+
+  .row {
+    width: 40rem;
+  }
+
+  p {
+    font-size: 1.6rem !important;
+  }
+
+  .btn {
+    border: 0.3rem solid var(--base-color);
+  }
+
+  .logo {
+    width: 55%;
+  }
+
+  .ah-headline {
+    font-size: 2.4rem;
+  }
+
+  .heroTextBox p,
+  .WhatIDoHead p,
+  .skillHead p,
+  .testimonialHead p {
+    width: 90%;
+  }
+
+  .heroTextBox p {
+    margin: 10% auto;
+  }
+
+  .WhatIDoHead p {
+    margin: 10% auto;
+  }
+
+  .WhatIDoSection {
+    padding: 15% 0% 10% 0%;
+  }
+
+  .WhatIDoBox {
+    width: 100%;
+    margin: 5% auto;
+  }
+
+  .skillHead p {
+    margin: 10% auto;
+  }
+
+  .skillBox {
+    width: 85%;
+  }
+
+  .offerBox h3:after {
+    top: 128%;
+  }
+
+  .offerBox p {
+    margin: 15% auto 10% auto;
+  }
+
+  .serviceBox p {
+    margin: 10% auto;
+  }
+
+  .serviceBox h3:after {
+    top: 135%;
+  }
+
+  .serviceBox .serviceImageBox img {
+    max-width: 80%;
+    margin: 2% auto;
+  }
+
+  .testimonialHead p {
+    margin: 10% auto 0% auto;
+  }
+}
+
+/* for min width 321px and max width 360px */
+
+@media screen and (min-width: 321px) and (max-width: 350px) {
   html {
     font-size: 45.5%;
   }
