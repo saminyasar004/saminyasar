@@ -273,7 +273,7 @@
   }
 
   p {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 
   .logo {
@@ -322,5 +322,22 @@
 
   .offerBox p {
     margin: 15% auto 10% auto;
+  }
+
+  .serviceBox p {
+    margin: 10% auto;
+  }
+
+  .serviceBox h3:after {
+    top: 135%;
+  }
+
+  .serviceBox .serviceImageBox img {
+    max-width: 80%;
+    margin: 2% auto;
+  }
+
+  .testimonialHead p {
+    margin: 10% auto 0% auto;
   }
 }
