@@ -279,4 +279,15 @@
   .ah-headline {
     font-size: 2.4rem;
   }
+
+  .heroTextBox p {
+    margin: 10% auto;
+  }
+
+  .heroTextBox p,
+  .WhatIDoHead p,
+  .skillHead p,
+  .testimonialHead p {
+    width: 90%;
+  }
 }
