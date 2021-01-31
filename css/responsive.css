@@ -10,7 +10,7 @@
 /* for max width: 1140px */
 
 @media screen and (max-width: 1140px) {
-  /* noting else. all elements are fit to screen. */
+  /* Noting else. all elements are fit to screen. */
 }
 
 /* for max width: 960px */
@@ -174,7 +174,7 @@
 
 /* for max width: 450px */
 
-@media screen and (max-width: 451px) {
+@media screen and (max-width: 450px) {
   html {
     font-size: 45.5%;
   }
