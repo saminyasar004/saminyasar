@@ -4,6 +4,7 @@
 * medium: 720px
 * small: 540px
 * medium small: 450px
+* smart phone small: 320px
 * extra small: 240px
 */
 
@@ -258,6 +259,18 @@
   .serviceBox .serviceImageBox img {
     max-width: 70%;
     margin-right: 0;
+  }
+}
+
+/* for max width: 320px */
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 45.5%;
+  }
+
+  .row {
+    width: 32rem;
   }
 }
 
