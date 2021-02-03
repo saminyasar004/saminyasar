@@ -8,6 +8,33 @@
 * extra small: 240px
 */
 
+/* testing purpose start */
+
+/* for max width 1170px */
+
+@media screen and (max-width: 1170px) {
+  /* Notih else. all elements are fit to screen. */
+}
+
+/* for max width 1025px */
+@media screen and (max-width: 1170px) {
+  /* Notih else. all elements are fit to screen. */
+}
+
+/* for max width 768px */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50.5%;
+  }
+}
+
+/* for min width 768px and max-width 959 */
+/* @media screen and (minwidth) (max-width: 960px) { */
+/* Notih else. all elements are fit to screen. */
+/* } */
+
+/* testing purpose end */
+
 /* for max width: 1140px */
 
 @media screen and (max-width: 1140px) {
