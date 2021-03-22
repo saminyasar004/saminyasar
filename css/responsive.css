@@ -181,7 +181,7 @@
   }
 
   .row {
-    width: 50rem;
+    width: 60rem;
   }
 
   .navBar {
@@ -349,7 +349,7 @@
 
 /* for min width 321px and max width 360px */
 
-@media screen and (min-width: 321px) and (max-width: 350px) {
+/* @media screen and (min-width: 321px) and (max-width: 350px) {
   html {
     font-size: 35.5%;
   }
@@ -430,7 +430,7 @@
   .testimonialHead p {
     margin: 10% auto 0% auto;
   }
-}
+} */
 
 /* for max width: 240px */
 
@@ -514,5 +514,9 @@
 
   .testimonialHead p {
     margin: 10% auto 0% auto;
+  }
+
+  .footerSection p {
+    font-size: 1.4rem !important;
   }
 }
