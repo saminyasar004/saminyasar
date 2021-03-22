@@ -175,7 +175,7 @@
 
 /* for max width: 450px */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 451px) {
   html {
     font-size: 45.5%;
   }
