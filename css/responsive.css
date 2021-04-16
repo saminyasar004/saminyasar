@@ -1,58 +1,24 @@
-/* 
-* extra large: 1140px
-* large: 960px
-* medium: 720px
-* small: 540px
-* medium small: 450px
-* smart phone small: 320px
-* extra small: 240px
+/*
+ * 320px — 480px: Mobile devices.
+ * 481px — 768px: iPads, Tablets.
+ * 769px — 1024px: Small screens, laptops.
+ * 1025px — 1200px: Desktops, large screens.
+ * 1201px and more — Extra large screens, TV.
 */
 
-/* 
-* 1200px
-* 960px
-* 720px
-* 620px
-* 540px
-* 440px
-* 340px
-* 240px
-*/
+/* for 320px to 480px */
 
-/* for max-width:  1200px */
-
-@media screen and (max-width: 1200px) {
-  /* all elements are fit to screen */
-}
-
-/* for max width: 1140px */
-
-@media screen and (max-width: 1140px) {
-  /* Nothing else. all elements are fit to screen. */
-}
-
-/* for max width: 960px */
-
-@media screen and (max-width: 960px) {
-  html {
-    font-size: 58.5%;
-  }
-}
-
-/* for max width: 720px */
-
-@media screen and (max-width: 720px) {
-  html {
-    font-size: 60%;
-  }
-
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  /* re-usable components */
   .row {
-    width: 64rem;
+    width: calc(100% - 2rem);
   }
 
-  h2:after {
-    top: 140%;
+  html {
+    font-size: 50%;
   }
+
+  /* navigation bar start */
 
   .navBar {
     display: none;
@@ -63,438 +29,67 @@
   }
 
   .logo {
-    width: 35%;
+    width: 45%;
   }
 
-  .heroTextBox p,
-  .WhatIDoHead p,
-  .skillHead p,
-  .testimonialHead p {
-    width: 75%;
-  }
-
-  .WhatIDoBox {
-    width: 49.2%;
-  }
-
-  .WhatIDoDes .WhatIDoBox:nth-child(5) {
-    margin-left: 0;
-  }
-
-  .offerBox h3 {
-    width: 75%;
-    font-size: 2.3rem;
-  }
-
-  .offerBox h3:after {
-    top: 110%;
-  }
-
-  .offerBox p {
-    margin: 10% 0 5% 0;
-  }
-
-  .serviceBox {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 3%;
-  }
-
-  .serviceBox h3,
-  .serviceBox p {
-    width: 90%;
-    margin: 6% auto;
-  }
-
-  .serviceBox h3:after {
-    left: 50%;
-    transform: translate(-50%, -100%);
-  }
-
-  .serviceBox .serviceImageBox img {
-    max-width: 85%;
-    margin-right: 4%;
-  }
-}
-
-/* self start */
-
-/* for max width: 620px */
-
-@media screen and (max-width: 620px) {
-  html {
-    font-size: 58%;
-  }
-
-  .row {
-    width: 54rem;
-  }
-
-  h2:after {
-    top: 140%;
-  }
-
-  .navBar {
-    display: none;
-  }
-
-  .mobileNavBar {
-    display: inherit;
-  }
-
-  .logo {
-    width: 35%;
-  }
-
-  .heroTextBox p,
-  .WhatIDoHead p,
-  .skillHead p,
-  .testimonialHead p {
-    width: 75%;
-  }
-
-  .WhatIDoBox {
-    width: 49.2%;
-  }
-
-  .WhatIDoDes .WhatIDoBox:nth-child(5) {
-    margin-left: 0;
-  }
-
-  .skillBox {
-    width: 75%;
-  }
-
-  .offerBox h3 {
-    width: 75%;
-    font-size: 2.3rem;
-  }
-
-  .offerBox h3:after {
-    top: 110%;
-  }
-
-  .offerBox p {
-    margin: 10% 0 5% 0;
-  }
-
-  .serviceBox {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 3%;
-  }
-
-  .serviceBox h3,
-  .serviceBox p {
-    width: 90%;
-    margin: 6% auto;
-  }
-
-  .serviceBox h3:after {
-    left: 50%;
-    transform: translate(-50%, -100%);
-  }
-
-  .serviceBox .serviceImageBox img {
-    max-width: 85%;
-    margin-right: 4%;
-  }
-}
-
-/* self end */
-
-/* for max width: 540px */
-
-@media screen and (max-width: 540px) {
-  html {
-    font-size: 52.5%;
-  }
-
-  .row {
-    width: 60rem;
-  }
-
-  .navBar {
-    display: none;
-  }
-
-  .mobileNavBar {
-    display: inherit;
-  }
-
-  .logo {
-    width: 30%;
-  }
+  /* navigation bar end */
 
-  .heroTextBox p,
-  .WhatIDoHead p,
-  .skillHead p,
-  .testimonialHead p {
-    width: 75%;
-  }
-
-  .WhatIDoBox {
-    width: 49.2%;
-  }
-
-  .WhatIDoDes .WhatIDoBox:nth-child(5) {
-    margin-left: 0;
-  }
-
-  .offerBox h3 {
-    width: 75%;
-    font-size: 2.3rem;
-  }
-
-  .offerBox h3:after {
-    top: 110%;
-  }
-
-  .offerBox p {
-    margin: 10% 0 5% 0;
-  }
-
-  .serviceBox {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 3%;
-  }
-
-  .serviceBox h3,
-  .serviceBox p {
-    width: 100%;
-  }
-
-  .serviceBox h3:after {
-    left: 50%;
-    transform: translate(-50%, -100%);
-  }
-
-  .serviceBox .serviceImageBox img {
-    max-width: 85%;
-    margin-right: 4%;
-  }
-}
-
-/* self start */
-
-/* for max width: 440px */
-
-@media screen and (max-width: 440px) {
-  html {
-    font-size: 52.5%;
-  }
-
-  .row {
-    width: 50rem;
-  }
-
-  .navBar {
-    display: none;
-  }
-
-  .mobileNavBar {
-    display: inherit;
-  }
-
-  .logo {
-    width: 30%;
-  }
-
-  .heroTextBox p,
-  .WhatIDoHead p,
-  .skillHead p,
-  .testimonialHead p {
-    width: 75%;
-  }
-
-  .WhatIDoBox {
-    width: 49.2%;
-  }
-
-  .WhatIDoDes .WhatIDoBox:nth-child(5) {
-    margin-left: 0;
-  }
-
-  .offerBox h3 {
-    width: 75%;
-    font-size: 2.3rem;
-  }
-
-  .offerBox h3:after {
-    top: 110%;
-  }
-
-  .offerBox p {
-    margin: 10% 0 5% 0;
-  }
-
-  .serviceBox {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 3%;
-  }
-
-  .serviceBox h3,
-  .serviceBox p {
-    width: 100%;
-  }
-
-  .serviceBox h3:after {
-    left: 50%;
-    transform: translate(-50%, -100%);
-  }
-
-  .serviceBox .serviceImageBox img {
-    max-width: 85%;
-    margin-right: 4%;
-  }
-}
-
-/* self end */
-
-/* for max width: 340px */
-
-@media screen and (max-width: 340px) {
-  html {
-    font-size: 45.5%;
-  }
-
-  .row {
-    width: 40rem;
-  }
-
-  p {
-    font-size: 1.6rem !important;
-  }
-
-  .btn {
-    border: 0.3rem solid var(--base-color);
-  }
-
-  .logo {
-    width: 55%;
-  }
-
-  .ah-headline {
-    font-size: 2.4rem;
-  }
-
-  .heroTextBox p,
-  .WhatIDoHead p,
-  .skillHead p,
-  .testimonialHead p {
-    width: 90%;
-  }
+  /* hero section start */
 
   .heroTextBox p {
-    margin: 10% auto;
+    width: 100%;
+  }
+
+  /* hero section end */
+
+  /* what i do section start */
+
+  .WhatIDoSection {
+    padding: 10% 0 10% 0;
   }
 
   .WhatIDoHead p {
-    margin: 10% auto;
-  }
-
-  .WhatIDoSection {
-    padding: 15% 0% 10% 0%;
-  }
-
-  .WhatIDoBox {
-    width: 100%;
-    margin: 5% auto;
-  }
-
-  .skillHead p {
-    margin: 10% auto;
-  }
-
-  .skillBox {
-    width: 85%;
-  }
-
-  .offerBox h3:after {
-    top: 128%;
-  }
-
-  .offerBox p {
-    margin: 15% auto 10% auto;
-  }
-
-  .serviceBox p {
-    margin: 10% auto;
-  }
-
-  .serviceBox h3:after {
-    top: 135%;
-  }
-
-  .serviceBox .serviceImageBox img {
-    max-width: 80%;
-    margin: 2% auto;
-  }
-
-  .testimonialHead p {
-    margin: 10% auto 0% auto;
-  }
-}
-
-/* for max width: 240px */
-
-@media screen and (max-width: 240px) {
-  html {
-    font-size: 45.5%;
-  }
-
-  .row {
-    width: 30rem;
-  }
-
-  p {
-    font-size: 1.6rem !important;
-  }
-
-  .btn {
-    border: 0.3rem solid var(--base-color);
-  }
-
-  .logo {
-    width: 55%;
-  }
-
-  .ah-headline {
-    font-size: 2.4rem;
-  }
-
-  .heroTextBox p,
-  .WhatIDoHead p,
-  .skillHead p,
-  .testimonialHead p {
     width: 90%;
-  }
-
-  .heroTextBox p {
-    margin: 10% auto;
-  }
-
-  .WhatIDoHead p {
-    margin: 10% auto;
-  }
-
-  .WhatIDoSection {
-    padding: 15% 0% 10% 0%;
+    padding: 2rem 0rem;
   }
 
   .WhatIDoBox {
-    width: 100%;
-    margin: 5% auto;
+    width: calc(100% - 2rem);
+    /* width: 100%; */
   }
 
+  .WhatIDoBox:nth-child(2),
+  .WhatIDoBox:nth-child(3),
+  .WhatIDoBox:nth-child(5),
+  .WhatIDoBox:nth-child(6) {
+    margin-left: 0;
+  }
+
+  /* what i do section end */
+
+  /* skill section start */
+
   .skillHead p {
-    margin: 10% auto;
+    width: 90%;
+    padding: 2rem 0rem;
   }
 
   .skillBox {
-    width: 85%;
+    width: calc(100% - 2rem);
+    /* width: 90%; */
+  }
+
+  /* skill section end */
+
+  /* offer section start */
+
+  .offerSection .row .offerBox:first-child {
+    display: none;
+  }
+
+  .offerSection .row .offerBox:last-child {
+    width: calc(100% - 2rem);
+    /* width: 100%; */
   }
 
   .offerBox {
@@ -506,33 +101,224 @@
   }
 
   .offerBox h3:after {
-    top: 128%;
-    left: 37%;
+    left: 50%;
+    transform: translate(-50%, -100%);
   }
 
-  .offerBox p {
-    margin: 15% auto 10% auto;
+  /* offer section end */
+
+  /* service section start */
+
+  .serviceBox {
+    width: calc(100% - 2rem);
+    /* width: 100%; */
+    text-align: center;
+  }
+
+  .serviceBox h3 {
+    width: 100%;
   }
 
   .serviceBox p {
-    margin: 10% auto;
+    width: 100%;
   }
 
   .serviceBox h3:after {
-    top: 135%;
+    left: 50%;
+    transform: translate(-50%, -100%);
   }
 
-  .serviceBox .serviceImageBox img {
-    max-width: 80%;
-    margin: 2% auto;
-  }
+  /* service section end */
+
+  /* testimonial section start */
 
   .testimonialHead p {
-    margin: 10% auto 0% auto;
+    width: 100%;
+    padding: 2rem 0rem;
   }
+
+  /* testimonial section end */
 }
 
-/*
-* All elements of the home page have been responsive.
-* The End.
-*/
+/* for 481px to 768px */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* re-usable components */
+  .row {
+    width: calc(100% - 2rem);
+  }
+
+  /* navigation bar start */
+
+  .navBar {
+    display: none;
+  }
+
+  .mobileNavBar {
+    display: inherit;
+  }
+
+  .logo {
+    width: 40%;
+  }
+
+  /* navigation bar end */
+
+  /* hero section start */
+
+  .heroTextBox p {
+    width: 100%;
+  }
+
+  /* hero section end */
+
+  /* what i do section start */
+
+  .WhatIDoSection {
+    padding: 10% 0 10% 0;
+  }
+
+  .WhatIDoHead p {
+    width: 90%;
+    padding: 2rem 0rem;
+  }
+
+  .WhatIDoBox {
+    width: calc(100% - 2rem);
+    /* width: 100%; */
+  }
+
+  .WhatIDoBox:nth-child(2),
+  .WhatIDoBox:nth-child(3),
+  .WhatIDoBox:nth-child(5),
+  .WhatIDoBox:nth-child(6) {
+    margin-left: 0;
+  }
+
+  /* what i do section end */
+
+  /* skill section start */
+
+  .skillHead p {
+    width: 90%;
+    padding: 2rem 0rem;
+  }
+
+  .skillBox {
+    width: calc(100% - 2rem);
+    /* width: 90%; */
+  }
+
+  /* skill section end */
+
+  /* offer section start */
+
+  .offerSection .row .offerBox:first-child {
+    display: none;
+  }
+
+  .offerSection .row .offerBox:last-child {
+    width: calc(100% - 2rem);
+    /* width: 100%; */
+  }
+
+  .offerBox {
+    text-align: center;
+  }
+
+  .offerBox h3 {
+    width: 100%;
+  }
+
+  .offerBox h3:after {
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+
+  /* offer section end */
+
+  /* service section start */
+
+  .serviceBox {
+    width: calc(100% - 2rem);
+    /* width: 100%; */
+    text-align: center;
+  }
+
+  .serviceBox h3 {
+    width: 100%;
+  }
+
+  .serviceBox p {
+    width: 100%;
+  }
+
+  .serviceBox h3:after {
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+
+  /* service section end */
+
+  /* testimonial section start */
+
+  .testimonialHead p {
+    width: 100%;
+    padding: 2rem 0rem;
+  }
+
+  /* testimonial section end */
+}
+
+/* for 769px to 1024px */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* re-usable components start */
+  .row {
+    width: calc(100% - 2rem);
+  }
+
+  /* re-usable components end */
+
+  /* navigation section start */
+
+  .navBar {
+    display: none;
+  }
+
+  .mobileNavBar {
+    display: inherit;
+  }
+
+  .mobileMenu {
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo {
+    width: 35%;
+  }
+
+  /* navigation section end */
+
+  /* offer section start */
+
+  .offerBox h3:after {
+    top: 107%;
+  }
+
+  /* offer section end */
+}
+
+/* for 1025px to 1200px */
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* all are fit to screen */
+}
+
+/* for 1201px to up */
+
+@media screen and (max-width: 1201px) {
+  /* all are fit to screen */
+}
