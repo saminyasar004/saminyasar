@@ -61,6 +61,10 @@ p {
   letter-spacing: var(--letter-spacing);
 }
 
+span {
+  font-family: var(--para);
+}
+
 h1,
 h2,
 h3,
@@ -111,6 +115,17 @@ h6 {
 .btnColor:hover {
   background: transparent;
   color: var(--base-color);
+}
+
+.btnVIP {
+  border: 0.2rem solid var(--base-color);
+  border-radius: 100rem;
+  padding: 1rem 2rem;
+}
+
+.btnVIP:hover {
+  color: #fff !important;
+  background: var(--base-color);
 }
 
 .activeLink {
@@ -847,6 +862,243 @@ nav {
 
 /* testimonial section end */
 
+/* service page start */
+
+.serviceHeaderSection {
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.658)),
+    url(../img/brown_desk.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.serviceHeaderSection::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.658)),
+    url(../img/brown_desk.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  clip-path: polygon(100% 0, 100% 41%, 50% 46%, 0 41%, 0 0);
+  bottom: 0;
+  left: 0;
+  top: 60%;
+  right: 0;
+  z-index: -1;
+}
+
+.serviceHead {
+  padding: 10rem 0rem;
+  text-align: center;
+}
+
+.serviceHead h1 {
+  font-size: 3.2rem;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.priceSection {
+  width: 100%;
+  height: auto;
+  padding: 5% 0 0% 0;
+}
+
+.priceSection:last-child {
+  padding: 5% 0 5% 0;
+}
+
+.priceHead {
+  text-align: center;
+}
+
+.priceHead h2 {
+  color: var(--font-color);
+  font-size: 2.5rem;
+  text-transform: capitalize;
+}
+
+.priceHead p {
+  font-size: 1.5rem;
+  padding: 2rem 0rem;
+  text-transform: capitalize;
+}
+
+.priceContainer {
+  text-align: center;
+}
+
+.priceBox {
+  height: auto;
+  padding: 2rem;
+  background: #fffbfb;
+  box-shadow: 0px 0.4rem 1.2rem 0rem rgba(0, 0, 0, 0.86);
+  border-radius: 0.5rem;
+}
+
+.priceBox:nth-child(2) {
+  border: 0.5rem solid var(--base-color);
+}
+
+.priceBox h4 {
+  font-size: 1.9rem;
+  padding: 1rem 0rem;
+  color: var(--font-color);
+  text-transform: capitalize;
+}
+
+.priceBox span {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.priceBox h5 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--font-color);
+  padding: 1rem 0rem;
+}
+
+.priceBox ul {
+  padding: 1% 0;
+  list-style-type: none;
+  font-family: var(--para);
+}
+
+.priceBox ul li {
+  font-size: 1.5rem;
+  padding: 2% 0;
+}
+
+.priceBox .btnColor a {
+  color: #fff;
+}
+
+.priceBox .btnTp a {
+  color: var(--base-color);
+}
+
+.priceBox .btnColor:hover a {
+  color: var(--base-color);
+}
+
+.priceBox .btnTp:hover a {
+  color: #fff;
+}
+
+/* service page end */
+
+/* contact section start */
+
+.contactHeaderSection {
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.658)),
+    url(../img/photo-of-designer-creating-a-website.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.contactHeaderSection::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.658)),
+    url(../img/photo-of-designer-creating-a-website.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  clip-path: polygon(100% 0, 100% 41%, 50% 46%, 0 41%, 0 0);
+  bottom: 0;
+  left: 0;
+  top: 60%;
+  right: 0;
+  z-index: -1;
+}
+
+.contactHead {
+  padding: 10rem 0rem;
+  text-align: center;
+}
+
+.contactHead h1 {
+  font-size: 3.2rem;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.mapSection {
+  width: 100%;
+  height: auto;
+  padding: 8rem 0rem;
+}
+
+.mapDetails {
+  text-align: center;
+}
+
+.mapDetails h2 {
+  text-transform: capitalize;
+  color: var(--font-color);
+  font-size: 2.5rem;
+}
+
+.contactBox {
+  padding: 4rem 0rem;
+}
+
+.contactBox:nth-child(3) {
+  margin-left: 0;
+}
+
+.contactBox i {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  font-size: 2rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background: 0 0;
+  margin-bottom: 5%;
+  border-radius: 50%;
+  transition: all 0.3s;
+  color: var(--base-color);
+  border: 0.1rem solid var(--base-color);
+}
+
+.contactBox i:hover {
+  color: #fff;
+  background: var(--base-color);
+}
+
+.contactBox p {
+  font-size: 1.5rem;
+  padding: 2rem 0rem;
+  text-transform: capitalize;
+}
+
+.contactBox:last-child p {
+  text-transform: lowercase;
+}
+
+/* contact section end */
+
 /* footer section start */
 
 .footerSection {
@@ -866,16 +1118,6 @@ nav {
   text-transform: capitalize;
   text-align: center;
 }
-
-/* facebook messenger */
-
-/* .llcnCH {
-  font-family: var(--para);
-}
-
-.jWA-dFm {
-  background: #fff !important;
-} */
 
 ._924l {
   display: none !important;

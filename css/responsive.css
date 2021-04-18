@@ -55,7 +55,6 @@
 
   .WhatIDoBox {
     width: calc(100% - 2rem);
-    /* width: 100%; */
   }
 
   .WhatIDoBox:nth-child(2),
@@ -76,7 +75,6 @@
 
   .skillBox {
     width: calc(100% - 2rem);
-    /* width: 90%; */
   }
 
   /* skill section end */
@@ -89,7 +87,6 @@
 
   .offerSection .row .offerBox:last-child {
     width: calc(100% - 2rem);
-    /* width: 100%; */
   }
 
   .offerBox {
@@ -111,7 +108,6 @@
 
   .serviceBox {
     width: calc(100% - 2rem);
-    /* width: 100%; */
     text-align: center;
   }
 
@@ -138,6 +134,26 @@
   }
 
   /* testimonial section end */
+
+  /* service page start */
+
+  .priceSection {
+    padding: 10% 0 0 0;
+  }
+
+  .priceBox {
+    margin: 2rem 0;
+  }
+
+  /* service page end */
+
+  /* contact page start */
+
+  .contactBox {
+    padding: 4rem 0rem;
+  }
+
+  /* contact page end */
 }
 
 /* for 481px to 768px */
@@ -185,7 +201,6 @@
 
   .WhatIDoBox {
     width: calc(100% - 2rem);
-    /* width: 100%; */
   }
 
   .WhatIDoBox:nth-child(2),
@@ -206,7 +221,6 @@
 
   .skillBox {
     width: calc(100% - 2rem);
-    /* width: 90%; */
   }
 
   /* skill section end */
@@ -219,7 +233,6 @@
 
   .offerSection .row .offerBox:last-child {
     width: calc(100% - 2rem);
-    /* width: 100%; */
   }
 
   .offerBox {
@@ -241,7 +254,6 @@
 
   .serviceBox {
     width: calc(100% - 2rem);
-    /* width: 100%; */
     text-align: center;
   }
 
@@ -268,6 +280,32 @@
   }
 
   /* testimonial section end */
+
+  /* service page start */
+
+  .priceSection {
+    padding: 10% 0 0 0;
+  }
+
+  .priceBox {
+    width: calc(100% - 5rem);
+    margin-left: 50% !important;
+    margin-bottom: 2rem;
+    transform: translateX(-50%);
+  }
+
+  /* service page end */
+
+  /* contact page start */
+
+  .contactBox {
+    width: calc(100% - 10rem);
+    margin-left: 50% !important;
+    transform: translateX(-50%);
+    padding: 4rem 0rem;
+  }
+
+  /* contact page end */
 }
 
 /* for 769px to 1024px */
@@ -309,6 +347,25 @@
   }
 
   /* offer section end */
+
+  /* service page start */
+
+  .priceBox {
+    margin-bottom: 2rem;
+    width: calc(100% - 15rem);
+    margin-left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  /* service page end */
+
+  /* contact page start */
+
+  .contactBox {
+    padding: 4rem 0rem;
+  }
+
+  /* contact page end */
 }
 
 /* for 1025px to 1200px */
