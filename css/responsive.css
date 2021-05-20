@@ -154,6 +154,15 @@
   }
 
   /* contact page end */
+
+  /* portfolio page start */
+
+  .portfolioSectionHeader p {
+    width: 90%;
+    padding: 2rem 0rem;
+  }
+
+  /* portfolio page end */
 }
 
 /* for 481px to 768px */
@@ -306,6 +315,15 @@
   }
 
   /* contact page end */
+
+  /* portfolio page start */
+
+  .portfolioSectionHeader p {
+    width: 100%;
+    padding: 2rem 0rem;
+  }
+
+  /* portfolio page end */
 }
 
 /* for 769px to 1024px */
@@ -366,6 +384,15 @@
   }
 
   /* contact page end */
+
+  /* portfolio page start */
+
+  .portfolioSectionHeader p {
+    width: 100%;
+    padding: 2rem 0rem;
+  }
+
+  /* portfolio page end */
 }
 
 /* for 1025px to 1200px */

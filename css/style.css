@@ -997,7 +997,11 @@ nav {
 
 /* service page end */
 
-/* contact section start */
+/* about page start */
+
+/* about page end */
+
+/* contact page start */
 
 .contactHeaderSection {
   width: 100%;
@@ -1097,7 +1101,102 @@ nav {
   text-transform: lowercase;
 }
 
-/* contact section end */
+/* contact page end */
+
+/* portfolio page start */
+
+.portfolioHeaderSection {
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.658)),
+    url(../img/coding_in_laptop.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.portfolioHeaderSection::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.658)),
+    url(../img/coding_in_laptop.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  clip-path: polygon(100% 0, 100% 41%, 50% 46%, 0 41%, 0 0);
+  bottom: 0;
+  left: 0;
+  top: 60%;
+  right: 0;
+  z-index: -1;
+}
+
+.portfolioHead {
+  padding: 10rem 0rem;
+  text-align: center;
+}
+
+.portfolioHead h1 {
+  color: #fff;
+  font-size: 3.2rem;
+  text-transform: capitalize;
+}
+
+.portfolioSection {
+  width: 100%;
+  height: auto;
+}
+
+.portfolioSectionHeader {
+  text-align: center;
+  padding: 5rem 0rem;
+}
+
+.portfolioSectionHeader h2 {
+  text-transform: capitalize;
+  color: var(--font-color);
+  font-size: 2.5rem;
+}
+
+.portfolioSectionHeader p {
+  width: 60%;
+  margin: 2% auto;
+  text-align: center;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+.portfolioImageContainer .col1 {
+  transition: var(--transition);
+}
+
+.portfolioImageContainer .col1:hover {
+  transform: translateY(-0.5rem);
+}
+
+.portfolioImageContainer .col1:nth-child(1) {
+  margin-bottom: 0;
+}
+
+.portfolioImageContainer .col1:nth-child(3),
+.portfolioImageContainer .col1:nth-child(5),
+.portfolioImageContainer .col1:nth-child(7) {
+  margin-left: 0;
+}
+
+.portfolioImageContainer .col1 a img {
+  max-width: 100%;
+  border: 1px solid #eeeeee;
+  border-radius: 0.9rem;
+  box-shadow: 0px 5px 10px 1px rgb(178 178 178 / 12%);
+}
+
+/* portfolio page end */
 
 /* footer section start */
 
