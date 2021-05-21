@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Samin Yasar | Professional Web Designer and Developer</title>
+    <!-- favicon icon -->
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon" />
+    <!-- google fonts: poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google fonts: montserrat alternates -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google fonts: montserrat -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google fonts: work sans -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href=".././icon/css/all.min.css" />
+    <!-- linking vendor stylesheet files -->
+    <link rel="stylesheet" href="../vendor/css/aos.css" />
+    <link rel="stylesheet" href="../vendor/css/grid.css" />
+    <link rel="stylesheet" href="../vendor/css/normalize.css" />
+    <link rel="stylesheet" href="../vendor/css/jquery.animatedheadline.css" />
+    <link rel="stylesheet" href="../vendor/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../vendor/css/owl.theme.default.min.css" />
+    <!-- lining main stylesheet files -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <!-- pre-loader section start -->
+
+    <div id="preloader">
+      <div class="loader-container">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- pre-loader section end -->
+
+    <!-- about nav start -->
+
+    <header class="aboutHeaderSection">
+      <div class="row navBar">
+        <nav>
+          <div class="logo">
+            <a href="#">
+              <img src="../img/samin_logo_white.png" alt="Samin Yasar" />
+            </a>
+          </div>
+          <div class="navMenu">
+            <ul>
+              <li><a href="../index.html">home</a></li>
+              <li>
+                <a href="../service/service.html">services</a>
+              </li>
+              <li><a class="activeLink" href="./about.html">about</a></li>
+              <li>
+                <a href="../contact/contact.html">contact</a>
+              </li>
+              <li>
+                <a class="btnVIP" href="../porfolio/portfolio.html"
+                  >portfolio</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- mobile navigation start -->
+      <div class="row mobileNavBar">
+        <nav>
+          <div class="logo">
+            <a href="#">
+              <img src="../img/samin_logo_white.png" alt="Samin Yasar" />
+            </a>
+          </div>
+          <div class="hamBurger">
+            <i id="hamburgerIcon" class="fa fa-bars"></i>
+            <!-- <span></span>
+            <span></span>
+            <span></span> -->
+          </div>
+          <div id="mobileMenu" class="mobileMenu">
+            <ul>
+              <li><a href="../index.html">home</a></li>
+              <li><a href="../service/service.html">services</a></li>
+              <li><a class="activeLink" href="./about.html">about</a></li>
+              <li><a href="../contact/contact.html">contact</a></li>
+              <li>
+                <a class="btnVIP" href="../porfolio/portfolio.html"
+                  >portfolio</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- mobile navigation end -->
+      <div class="row">
+        <div class="aboutHead">
+          <h1>who i am</h1>
+        </div>
+      </div>
+    </header>
+
+    <section class="aboutSection">
+      <div class="row">
+        <!-- code going here -->
+      </div>
+    </section>
+
+    <!-- contact section end -->
+
+    <!-- footer section start -->
+
+    <footer class="footerSection">
+      <div class="row">
+        <p>copyright © 2020 | all rights reserved by samin yasar</p>
+      </div>
+    </footer>
+
+    <!-- footer section end -->
+
+    <!-- facebook mesasge chat start -->
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: "v9.0",
+        });
+      };
+
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
+
+    <!-- Your Chat Plugin code -->
+    <div
+      class="fb-customerchat"
+      attribution="setup_tool"
+      page_id="102114685234047"
+      theme_color="#1DD881"
+    ></div>
+
+    <!-- facebook mesasge chat end -->
+
+    <!-- linking javascript files -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../vendor/js/jquery.animatedheadline.min.js"></script>
+    <script src="../vendor/js/html5shiv.min.js"></script>
+    <script src="../vendor/js/morphext.min.js"></script>
+    <script src="../vendor/js/respond.min.js"></script>
+    <script src="../vendor/js/aos.js"></script>
+    <script src="../vendor/js/simple-skillbar.js"></script>
+    <script src="../vendor/js/owl.carousel.min.js"></script>
+
+    <script>
+      $(function () {
+        $(".selector").animatedHeadline({
+          animationType: "clip",
+        });
+      });
+      AOS.init({
+        delay: 8,
+        duration: 1000,
+      });
+      $(".demo").simpleSkillbar({});
+      $("#testimonial").owlCarousel({
+        items: 2,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        smartSpeed: 200,
+        fluidSpeed: 1000,
+        autoplaySpeed: 500,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          320: {
+            items: 1,
+          },
+          480: {
+            items: 1,
+          },
+          768: {
+            items: 1,
+          },
+          1024: {
+            items: 2,
+          },
+          1200: {
+            items: 2,
+          },
+          1440: {
+            items: 2,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

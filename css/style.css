@@ -1136,6 +1136,11 @@ nav {
   z-index: -1;
 }
 
+.btnVIP.activeLink {
+  background: var(--base-color);
+  color: #fff !important;
+}
+
 .portfolioHead {
   padding: 10rem 0rem;
   text-align: center;
@@ -1183,9 +1188,7 @@ nav {
   margin-bottom: 0;
 }
 
-.portfolioImageContainer .col1:nth-child(3),
-.portfolioImageContainer .col1:nth-child(5),
-.portfolioImageContainer .col1:nth-child(7) {
+.portfolioImageContainer .col1:nth-child(odd) {
   margin-left: 0;
 }
 
