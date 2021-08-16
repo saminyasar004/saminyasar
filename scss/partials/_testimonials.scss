@@ -18,8 +18,16 @@
         padding: 4rem 0;
 
         #testimonial {
+            .owl-stage {
+                display: flex;
+            }
+
             .item {
+                display: flex;
+                height: 100%;
+
                 .testimonial-item {
+                    width: 100%;
                     margin: 0 1rem;
                     padding: 3rem 2rem;
                     text-align: center;

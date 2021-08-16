@@ -759,7 +759,21 @@ p {
   padding: 4rem 0;
 }
 
+.testimonial-section .testimonial-container #testimonial .owl-stage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.testimonial-section .testimonial-container #testimonial .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
 .testimonial-section .testimonial-container #testimonial .item .testimonial-item {
+  width: 100%;
   margin: 0 1rem;
   padding: 3rem 2rem;
   text-align: center;
