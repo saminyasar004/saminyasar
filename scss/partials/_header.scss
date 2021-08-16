@@ -1,0 +1,65 @@
+@import "./variables";
+
+.header-section {
+    width: 100%;
+    min-height: 20rem;
+    padding: 10rem 0 5rem 0;
+    background: linear-gradient(#033333c4),
+        url("../img/hero-bg.jpg") center no-repeat;
+    background-size: cover;
+
+    .header-content-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+        grid-template-rows: auto;
+        // grid-template: auto / repeat(2, 1fr);
+
+        .header-text {
+            padding-top: 6rem;
+
+            h1 {
+                font: {
+                    size: 3.5rem;
+                    weight: 500;
+                }
+                text-transform: capitalize;
+                line-height: 1.7;
+
+                span {
+                    font: {
+                        size: 4rem;
+                        weight: 600;
+                    }
+                    color: $primary_color;
+                }
+            }
+
+            p {
+                font: {
+                    size: 2rem;
+                }
+                padding: 1rem 0;
+                text-transform: capitalize;
+            }
+
+            .btn-header {
+                border-color: $primary_color;
+                background: $primary_color;
+
+                &:hover {
+                    background: transparent;
+                }
+            }
+        }
+
+        .header-image {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            img {
+                max-width: 70%;
+            }
+        }
+    }
+}

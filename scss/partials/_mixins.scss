@@ -1,0 +1,38 @@
+@import "./variables";
+
+.row {
+    width: 100rem;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    outline: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    border: 0.2rem solid transparent;
+    border-radius: 0.4rem;
+    background: transparent;
+    font: {
+        size: 1.5rem;
+    }
+    color: $font_color;
+    transition: all 0.3s;
+}
+
+.btn-header,
+.btn-mixer,
+.btn-project,
+.btn-project-github,
+.btn-show-projects {
+    @extend .btn;
+}
+
+// Media Queries
+@mixin media-query($size) {
+    @media screen and (min-width: map-get($size, "min")) and (max-width: map-get($size, "max")) {
+        @content;
+    }
+}

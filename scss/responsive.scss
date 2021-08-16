@@ -1,0 +1,299 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+
+/**
+ * 320px — 480px: Mobile devices. {xsmall}
+ * 481px — 768px: iPads, Tablets. {small}
+ * 769px — 1024px: Small screens, laptops. {medium}
+ * 1025px — 1200px: Desktops, large screens. {large}
+ * 1201px and more — Extra large screens, TV. {xlarge}
+*/
+
+// 320 to 480
+@include media-query($xsmall) {
+    $html_font_size: 65%;
+
+    html {
+        font: {
+            size: $html_font_size;
+        }
+    }
+
+    .row {
+        width: calc(100% - 2rem);
+    }
+
+    .navigation-section {
+        .desktop-navigation-items-container {
+            display: none;
+        }
+
+        .mobile-navigation-items-container {
+            display: grid;
+        }
+    }
+
+    .header-section {
+        padding: 2rem 0 5rem 0;
+
+        .header-content-container {
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(calc(100% - 2rem), 1fr)
+            );
+
+            .header-text {
+                grid-row: 2 / -1;
+                padding-top: 2rem;
+                text-align: center;
+            }
+
+            .header-image {
+                grid-row: 1 / 2;
+                justify-content: center;
+            }
+        }
+    }
+
+    .about-section {
+        .about-container {
+            padding: 0;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(calc(100% - 2rem), 1fr)
+            );
+            grid-gap: 2rem;
+
+            .about-image {
+                align-items: center;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+        }
+    }
+
+    .service-section {
+        .service-container {
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(calc(100% - 2rem), 1fr)
+            );
+        }
+    }
+
+    .skill-section {
+        .skill-container {
+            .skill-items-controller {
+                .btn-mixer {
+                    font: {
+                        size: 1.3rem;
+                    }
+                }
+            }
+
+            .skill-items-controller,
+            .skill-items-container {
+                width: 100%;
+            }
+        }
+    }
+
+    .project-section {
+        .project-item-container {
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(calc(100% - 2rem), 1fr)
+            );
+            grid-gap: 2rem;
+
+            .project-details {
+                text-align: center;
+
+                .project-item-features {
+                    gap: 2rem;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .contact-section {
+        .contact-container {
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(calc(100% - 2rem), 1fr)
+            );
+            grid-gap: 3rem;
+        }
+    }
+
+    .footer-section {
+        padding: 1rem 0;
+
+        .row {
+            p {
+                font: {
+                    size: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+// 481 to 768
+@include media-query($small) {
+    $html_font_size: 60%;
+
+    html {
+        font: {
+            size: $html_font_size;
+        }
+    }
+
+    .row {
+        width: calc(100% - 2rem);
+    }
+
+    .navigation-section {
+        .desktop-navigation-items-container {
+            display: none;
+        }
+
+        .mobile-navigation-items-container {
+            display: grid;
+        }
+    }
+
+    .header-section {
+        padding: 2rem 0 5rem 0;
+
+        .header-content-container {
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(calc(100% - 2rem), 1fr)
+            );
+
+            .header-text {
+                grid-row: 2 / -1;
+                padding-top: 2rem;
+                text-align: center;
+            }
+
+            .header-image {
+                grid-row: 1 / 2;
+                justify-content: center;
+            }
+        }
+    }
+
+    .about-section {
+        .about-container {
+            padding: 0;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(calc(100% - 2rem), 1fr)
+            );
+            grid-gap: 2rem;
+
+            .about-image {
+                align-items: center;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+        }
+    }
+
+    .service-section {
+        .service-container {
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(calc(100% - 2rem), 1fr)
+            );
+        }
+    }
+
+    .skill-section {
+        .skill-container {
+            .skill-items-controller,
+            .skill-items-container {
+                width: 100%;
+            }
+        }
+    }
+
+    .project-section {
+        .project-item-container {
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(calc(100% - 2rem), 1fr)
+            );
+            grid-gap: 2rem;
+
+            .project-details {
+                text-align: center;
+
+                .project-item-features {
+                    gap: 2rem;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .contact-section {
+        .contact-container {
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(calc(100% - 2rem), 1fr)
+            );
+            grid-gap: 3rem;
+        }
+    }
+
+    .footer-section {
+        padding: 1rem 0;
+
+        .row {
+            p {
+                font: {
+                    size: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+// 769 to 1024
+@include media-query($medium) {
+    $html_font_size: 54%;
+
+    html {
+        font: {
+            size: $html_font_size;
+        }
+    }
+
+    .row {
+        width: calc(100% - 3rem);
+    }
+
+    .service-section {
+        .service-container {
+            grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+        }
+    }
+}
+
+// 1025 to 1200
+@include media-query($large) {
+    // all are fit to screen
+}
+
+// 1200 to more...
+@include media-query($xlarge) {
+    // all are fit to screen
+}

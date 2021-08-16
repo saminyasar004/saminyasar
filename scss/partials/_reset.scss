@@ -1,0 +1,82 @@
+@import "./variables";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-drag: none;
+}
+
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 0rem;
+    background: $secondary_color;
+    border-radius: 1rem;
+}
+
+html {
+    font: {
+        size: $html_font_size;
+    }
+    scroll-behavior: smooth;
+}
+
+body {
+    font: {
+        size: 1.5rem;
+        weight: 400;
+        family: $para_font_family;
+    }
+    color: $font_color;
+    cursor: default;
+    overflow-x: hidden;
+    background: $background_color;
+    text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font: {
+        family: $heading_font_family;
+    }
+}
+
+h2 {
+    position: relative;
+    font: {
+        size: 2.5rem;
+    }
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    width: 7rem;
+    height: 0.3rem;
+    border-radius: 0.5rem;
+    background: $secondary_color;
+    display: block;
+    top: 155%;
+    left: 50%;
+    -webkit-transform: translate(-55%, -100%);
+    transform: translate(-55%, -100%);
+}
+
+a {
+    color: $font_color;
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.7;
+}

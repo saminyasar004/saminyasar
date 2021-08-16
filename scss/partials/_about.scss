@@ -1,0 +1,83 @@
+@import "./variables";
+
+.about-section {
+    width: 100%;
+    height: auto;
+    padding: 6rem 0;
+
+    .about-heading {
+        padding: 1rem 0 5rem 0;
+        text-align: center;
+
+        h2 {
+            text-transform: capitalize;
+        }
+    }
+
+    .about-container {
+        padding: 3rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+        grid-template-rows: auto;
+        // grid-template: auto / repeat(2, 1fr);
+
+        .about-image {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+
+            .about-image-wrapper {
+                width: 25rem;
+                height: 25rem;
+                border: 0.2rem solid $secondary_color;
+                border-radius: 50%;
+                overflow: hidden;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .about-text {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            gap: 3rem;
+
+            .about-text-social-links {
+                ul {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    gap: 2rem;
+                    list-style: none;
+
+                    li {
+                        a {
+                            i {
+                                width: 4rem;
+                                height: 4rem;
+                                text-align: center;
+                                border-radius: 50%;
+                                cursor: pointer;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background: $primary_color;
+                                border: 0.2rem solid $primary_color;
+                                transition: all 0.3s;
+
+                                &:hover {
+                                    background: transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

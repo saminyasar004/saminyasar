@@ -1,0 +1,14 @@
+@import "./variables";
+
+.footer-section {
+    padding: 2rem 0;
+    background: $box_background_color;
+
+    .row {
+        text-align: center;
+
+        p {
+            text-transform: capitalize;
+        }
+    }
+}
