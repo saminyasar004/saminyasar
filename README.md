@@ -8,6 +8,8 @@
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-Questions-brightgreen)](https://stackoverflow.com/users/14735945/samin-yasar)
 [![Github Follow](https://img.shields.io/github/followers/saminyasar004?label=saminyasar004&style=social)](https://github.com/saminyasar004/)
 
+![Design preview for the Fylo landing page with dark theme and features grid](./design/preview.jpg)
+
 ## **Live Preview**
 
 [Live Preview](https://saminyasar.netlify.app/ "Samin Yasar's Portfolio")
