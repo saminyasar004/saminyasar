@@ -32,6 +32,10 @@
                     padding: 3rem 2rem;
                     text-align: center;
                     border-radius: 0.8rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    flex-direction: column;
                     background: $box_background_color;
 
                     .testimonial-details {
