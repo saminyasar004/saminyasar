@@ -1,5 +1,5 @@
 # **Samin Yasar Porfolio Website**
-This is my personal portfolio website.
+This is my portfolio website.
 
 [![Website](https://img.shields.io/website?label=saminyasar%20🚀&name=hello&style=flat&url=https://saminyasar.netlify.app/)](https://saminyasar.netlify.app/)
 [![Facebook Follow](https://img.shields.io/badge/Facebook-Follow-brightgreen)](https://www.facebook.com/saminyasar004/)
