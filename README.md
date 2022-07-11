@@ -14,3 +14,5 @@ This is my portfolio website.
 ## **Live Preview**
 
 [Live Preview](https://saminyasar.netlify.app/ "Samin Yasar's Portfolio")
+
+#### Happy Coding 🚀
