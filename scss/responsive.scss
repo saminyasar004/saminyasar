@@ -2,14 +2,14 @@
 @import "./partials/mixins";
 
 /**
- * 320px — 480px: Mobile devices. {xsmall}
+ * 240px — 480px: Mobile devices. {xsmall}
  * 481px — 768px: iPads, Tablets. {small}
  * 769px — 1024px: Small screens, laptops. {medium}
  * 1025px — 1200px: Desktops, large screens. {large}
  * 1201px and more — Extra large screens, TV. {xlarge}
 */
 
-// 320 to 480
+// 240 to 480
 @include media-query($xsmall) {
     $html_font_size: 65%;
 
@@ -70,6 +70,11 @@
 
             .about-text {
                 text-align: center;
+
+                .about-text-social-links ul {
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                }
             }
         }
     }
@@ -93,7 +98,11 @@
                 }
             }
 
-            .skill-items-controller,
+            .skill-items-controller {
+                gap: 0.5rem;
+                width: 100%;
+            }
+
             .skill-items-container {
                 width: 100%;
             }
