@@ -19,8 +19,15 @@
   border-radius: 0.4rem;
   background: transparent;
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #000;
   transition: all 0.3s;
+}
+.btn:hover, .btn-header:hover,
+.btn-mixer:hover,
+.btn-project:hover,
+.btn-project-github:hover,
+.btn-show-projects:hover {
+  color: #ffffff;
 }
 
 /**

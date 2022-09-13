@@ -6,8 +6,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none;
     -webkit-user-drag: none;
+}
+
+::selection {
+    color: $black_color;
+    background: $primary_color;
 }
 
 ::-webkit-scrollbar {
@@ -34,7 +38,7 @@ body {
         weight: 400;
         family: $para_font_family;
     }
-    color: $font_color;
+    color: $white_color;
     cursor: default;
     overflow-x: hidden;
     background: $background_color;
@@ -74,7 +78,7 @@ h2::after {
 }
 
 a {
-    color: $font_color;
+    color: $white_color;
     text-decoration: none;
 }
 

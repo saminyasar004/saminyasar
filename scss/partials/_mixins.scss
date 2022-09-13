@@ -18,8 +18,12 @@
     font: {
         size: 1.5rem;
     }
-    color: $font_color;
+    color: $black_color;
     transition: all 0.3s;
+
+    &:hover {
+        color: $white_color;
+    }
 }
 
 .btn-header,

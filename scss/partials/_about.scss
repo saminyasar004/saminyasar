@@ -66,11 +66,13 @@
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
+                                color: $black_color;
                                 background: $primary_color;
                                 border: 0.2rem solid $primary_color;
                                 transition: all 0.3s;
 
                                 &:hover {
+                                    color: $white_color;
                                     background: transparent;
                                 }
                             }

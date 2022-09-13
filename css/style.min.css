@@ -4,11 +4,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   -webkit-user-drag: none;
+}
+
+::-moz-selection {
+  color: #000;
+  background: #1dd881;
+}
+
+::selection {
+  color: #000;
+  background: #1dd881;
 }
 
 ::-webkit-scrollbar {
@@ -94,8 +100,15 @@ p {
   border-radius: 0.4rem;
   background: transparent;
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #000;
   transition: all 0.3s;
+}
+.btn:hover, .btn-header:hover,
+.btn-mixer:hover,
+.btn-project:hover,
+.btn-project-github:hover,
+.btn-show-projects:hover {
+  color: #ffffff;
 }
 
 .navigation-section {
@@ -309,11 +322,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000;
   background: #1dd881;
   border: 0.2rem solid #1dd881;
   transition: all 0.3s;
 }
 .about-section .about-container .about-text .about-text-social-links ul li a i:hover {
+  color: #ffffff;
   background: transparent;
 }
 
@@ -345,6 +360,7 @@ p {
 }
 .service-section .service-container .service-item:hover {
   background: #1dd881;
+  color: #000;
 }
 .service-section .service-container .service-item .service-image img {
   max-width: 30%;
@@ -384,12 +400,15 @@ p {
   justify-content: space-around;
 }
 .skill-section .skill-container .skill-items-controller .btn-mixer {
+  color: #ffffff;
   background: #1a5555;
 }
 .skill-section .skill-container .skill-items-controller .btn-mixer:hover {
+  color: #000;
   background: #1dd881;
 }
 .skill-section .skill-container .skill-items-controller .active-skills {
+  color: #000;
   background: #1dd881;
 }
 .skill-section .skill-container .skill-items-container {
@@ -682,7 +701,7 @@ p {
 .contact-section .contact-container .contact-email .contact-phone-icon i:hover,
 .contact-section .contact-container .contact-email .contact-address-icon i:hover,
 .contact-section .contact-container .contact-email .contact-email-icon i:hover {
-  color: #ffffff;
+  color: #000;
   background: #51ffae;
 }
 .footer-section {

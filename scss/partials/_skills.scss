@@ -25,14 +25,17 @@
             justify-content: space-around;
 
             .btn-mixer {
+                color: $white_color;
                 background: $box_background_color;
 
                 &:hover {
+                    color: $black_color;
                     background: $primary_color;
                 }
             }
 
             .active-skills {
+                color: $black_color;
                 background: $primary_color;
             }
         }
