@@ -115,7 +115,6 @@ p {
   width: 100%;
   height: auto;
   padding: 0.5rem 0;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -523,10 +522,11 @@ p {
   font-size: 2.4rem;
   color: #51ffae;
 }
+.project-section .project-item-container .project-image {
+  width: 100%;
+}
 .project-section .project-item-container .project-image img {
-  padding: 3rem;
-  border-radius: 0.8rem;
-  background: #1a5555;
+  padding: 0rem;
   max-width: 100%;
 }
 .project-section .project-button-container {

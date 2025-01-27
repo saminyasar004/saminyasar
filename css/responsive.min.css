@@ -158,7 +158,7 @@
     grid-template-columns: repeat(auto-fit, minmax(calc(100% - 2rem), 1fr));
   }
   .skill-section .skill-container .skill-items-controller,
-.skill-section .skill-container .skill-items-container {
+  .skill-section .skill-container .skill-items-container {
     width: 100%;
   }
   .project-section .project-item-container {
