@@ -9,7 +9,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Light Theme - Clean & Professional */
-    --background: 0 0% 98%;
+    --background: 0 0% 99%;
     --foreground: 180 85% 11%;
 
     --card: 0 0% 100%;
@@ -21,11 +21,11 @@ All colors MUST be HSL.
     --primary: 180 85% 11%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 155 30% 95%;
+    --secondary: 155 70% 97%;
     --secondary-foreground: 180 85% 11%;
 
-    --muted: 155 20% 92%;
-    --muted-foreground: 180 40% 35%;
+    --muted: 155 40% 96%;
+    --muted-foreground: 180 40% 40%;
 
     --accent: 155 77% 48%;
     --accent-foreground: 0 0% 100%;
@@ -33,8 +33,8 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 155 20% 88%;
-    --input: 155 20% 88%;
+    --border: 155 30% 90%;
+    --input: 155 30% 90%;
     --ring: 155 77% 48%;
 
     --radius: 0.75rem;
@@ -42,7 +42,9 @@ All colors MUST be HSL.
     /* Custom tokens for portfolio */
     --gradient-start: 155 77% 48%;
     --gradient-end: 180 85% 35%;
-    --section-bg: 0 0% 100%;
+    --section-bg: 155 70% 98%;
+    --glass-bg: 0 0% 100%;
+    --glass-border: 155 30% 85%;
   }
 
   .dark {
@@ -79,6 +81,24 @@ All colors MUST be HSL.
     --gradient-start: 155 77% 48%;
     --gradient-end: 180 85% 25%;
     --section-bg: 180 75% 13%;
+    --glass-bg: 180 70% 14%;
+    --glass-border: 180 40% 25%;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: hsl(var(--glass-bg) / 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border) / 0.3);
+  }
+  
+  .glass-strong {
+    background: hsl(var(--glass-bg) / 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--glass-border) / 0.5);
   }
 }
 
