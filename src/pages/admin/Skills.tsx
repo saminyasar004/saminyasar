@@ -60,7 +60,11 @@ export default function AdminSkills() {
   const handleClose = () => {
     setIsOpen(false);
     setEditingSkill(null);
-    reset();
+    reset({
+      name: "",
+      category: "",
+      icon: ""
+    });
   };
 
   const categories = Array.from(new Set(skills.map(s => s.category)));
@@ -72,9 +76,9 @@ export default function AdminSkills() {
           <h1 className="text-4xl font-bold mb-2">Skills</h1>
           <p className="text-muted-foreground">Manage your technical skills</p>
         </div>
-        <Dialog open={isOpen} onOpenChange={handleClose}>
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogTrigger asChild>
-            <Button onClick={() => setIsOpen(true)}>
+            <Button>
               <Plus className="mr-2 h-4 w-4" />
               Add Skill
             </Button>

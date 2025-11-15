@@ -76,7 +76,13 @@ export default function AdminBlog() {
   const handleClose = () => {
     setIsOpen(false);
     setEditingPost(null);
-    reset();
+    reset({
+      title: "",
+      excerpt: "",
+      content: "",
+      image: "",
+      tags: ""
+    });
   };
 
   return (
@@ -86,9 +92,9 @@ export default function AdminBlog() {
           <h1 className="text-4xl font-bold mb-2">Blog Posts</h1>
           <p className="text-muted-foreground">Manage your blog content</p>
         </div>
-        <Dialog open={isOpen} onOpenChange={handleClose}>
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogTrigger asChild>
-            <Button onClick={() => setIsOpen(true)}>
+            <Button>
               <Plus className="mr-2 h-4 w-4" />
               Add Post
             </Button>

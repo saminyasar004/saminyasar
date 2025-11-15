@@ -63,7 +63,13 @@ export default function AdminTestimonials() {
   const handleClose = () => {
     setIsOpen(false);
     setEditingTestimonial(null);
-    reset();
+    reset({
+      name: "",
+      role: "",
+      company: "",
+      content: "",
+      avatar: ""
+    });
   };
 
   return (
@@ -73,9 +79,9 @@ export default function AdminTestimonials() {
           <h1 className="text-4xl font-bold mb-2">Testimonials</h1>
           <p className="text-muted-foreground">Manage client testimonials</p>
         </div>
-        <Dialog open={isOpen} onOpenChange={handleClose}>
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogTrigger asChild>
-            <Button onClick={() => setIsOpen(true)}>
+            <Button>
               <Plus className="mr-2 h-4 w-4" />
               Add Testimonial
             </Button>

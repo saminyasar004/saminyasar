@@ -75,7 +75,14 @@ export default function AdminProjects() {
   const handleClose = () => {
     setIsOpen(false);
     setEditingProject(null);
-    reset();
+    reset({
+      title: "",
+      description: "",
+      tech: "",
+      image: "",
+      github: "",
+      live: ""
+    });
   };
 
   return (
@@ -85,9 +92,9 @@ export default function AdminProjects() {
           <h1 className="text-4xl font-bold mb-2">Projects</h1>
           <p className="text-muted-foreground">Manage your project showcase</p>
         </div>
-        <Dialog open={isOpen} onOpenChange={handleClose}>
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogTrigger asChild>
-            <Button onClick={() => setIsOpen(true)}>
+            <Button>
               <Plus className="mr-2 h-4 w-4" />
               Add Project
             </Button>
