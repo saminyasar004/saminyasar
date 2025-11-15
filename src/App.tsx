@@ -10,6 +10,11 @@ import BlogPost from "./pages/BlogPost";
 import AdminLogin from "./pages/admin/Login";
 import { AdminLayout } from "./components/admin/AdminLayout";
 import AdminDashboard from "./pages/admin/Dashboard";
+import AdminProjects from "./pages/admin/Projects";
+import AdminSkills from "./pages/admin/Skills";
+import AdminTestimonials from "./pages/admin/Testimonials";
+import AdminBlog from "./pages/admin/Blog";
+import AdminSettings from "./pages/admin/Settings";
 
 const queryClient = new QueryClient();
 
@@ -26,11 +31,11 @@ const App = () => (
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/*" element={<AdminLayout />}>
             <Route path="dashboard" element={<AdminDashboard />} />
-            <Route path="projects" element={<div>Projects Management - Coming Soon</div>} />
-            <Route path="skills" element={<div>Skills Management - Coming Soon</div>} />
-            <Route path="testimonials" element={<div>Testimonials Management - Coming Soon</div>} />
-            <Route path="blog" element={<div>Blog Management - Coming Soon</div>} />
-            <Route path="settings" element={<div>Settings - Coming Soon</div>} />
+            <Route path="projects" element={<AdminProjects />} />
+            <Route path="skills" element={<AdminSkills />} />
+            <Route path="testimonials" element={<AdminTestimonials />} />
+            <Route path="blog" element={<AdminBlog />} />
+            <Route path="settings" element={<AdminSettings />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
