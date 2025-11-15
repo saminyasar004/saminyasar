@@ -3,6 +3,7 @@ import { useNavigate, Outlet, Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { LogOut, Home, Briefcase, Code, MessageSquare, Newspaper, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function AdminLayout() {
   const navigate = useNavigate();
@@ -32,11 +33,14 @@ export function AdminLayout() {
   return (
     <div className="min-h-screen bg-background flex">
       {/* Sidebar */}
-      <aside className="w-64 glass-strong border-r border-border p-6 flex flex-col">
+      <aside className="w-64 bg-card border-r border-border p-6 flex flex-col">
         <div className="space-y-6">
-          <div className="space-y-1">
-            <h2 className="text-2xl font-bold text-accent">Admin Panel</h2>
-            <p className="text-sm text-muted-foreground">Portfolio Manager</p>
+          <div className="space-y-1 flex items-center justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-accent">Admin Panel</h2>
+              <p className="text-sm text-muted-foreground">Portfolio Manager</p>
+            </div>
+            <ThemeToggle />
           </div>
 
           <nav className="space-y-2">
