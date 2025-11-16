@@ -84,6 +84,9 @@ All colors MUST be HSL.
     --glass-bg: 180 70% 14%;
     --glass-border: 180 40% 25%;
   }
+  .theme {
+    --animate-orbit: orbit calc(var(--duration)*1s) linear infinite;
+  }
 }
 
 @layer utilities {
@@ -93,7 +96,7 @@ All colors MUST be HSL.
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid hsl(var(--glass-border) / 0.3);
   }
-  
+
   .glass-strong {
     background: hsl(var(--glass-bg) / 0.8);
     backdrop-filter: blur(16px);
@@ -109,5 +112,19 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* ---break---
+*/
+
+@theme inline {
+  @keyframes orbit {
+  0% {
+    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+  100% {
+    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
   }
 }
