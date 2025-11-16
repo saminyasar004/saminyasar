@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ArrowDown, FileDown } from "lucide-react";
 import { usePortfolioStore } from "@/store/usePortfolioStore";
+import { ArrowDown, FileDown, Github, Linkedin, Mail } from "lucide-react";
+import { HeroIconCloudCircles } from "./hero-icon-cloud-circles";
 
 export function Hero() {
 	const { globalSettings } = usePortfolioStore();
@@ -128,17 +129,14 @@ export function Hero() {
 					</div>
 
 					{/* Right Column - Animation/Graphic */}
-					<div
+					{/* <div
 						className="relative animate-fade-in"
 						style={{ animationDelay: "0.4s" }}
 					>
 						<div className="relative aspect-square max-w-lg mx-auto">
-							{/* Glassmorphism Card with Animation */}
 							<div className="glass-strong rounded-3xl p-8 h-full flex items-center justify-center relative overflow-hidden">
-								{/* Animated gradient background */}
 								<div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-gradient-end/20 animate-pulse" />
 
-								{/* Placeholder for coding animation or metrics */}
 								<div className="relative z-10 text-center space-y-4">
 									<div className="text-6xl font-bold text-accent animate-glow">
 										4+
@@ -167,7 +165,6 @@ export function Hero() {
 									</div>
 								</div>
 
-								{/* Floating code elements */}
 								<div className="absolute top-10 right-10 glass rounded-lg px-4 py-2 text-xs text-accent font-mono animate-float">
 									{"<code />"}
 								</div>
@@ -179,6 +176,24 @@ export function Hero() {
 								</div>
 							</div>
 						</div>
+					</div> */}
+
+					{/* <div className="relative h-[500px] w-full overflow-hidden">
+						<OrbitingCircles>
+							<File />
+							<Settings />
+							<File />
+						</OrbitingCircles>
+						<OrbitingCircles radius={100} reverse>
+							<File />
+							<Settings />
+							<File />
+							<Search />
+						</OrbitingCircles>
+					</div> */}
+
+					<div className="relative overflow-hidden">
+						<HeroIconCloudCircles />
 					</div>
 				</div>
 
