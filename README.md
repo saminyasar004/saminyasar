@@ -1,73 +1,94 @@
-# Welcome to your Lovable project
+# Samin Yasar
 
-## Project info
+**Frontend-Focused Full Stack Web Developer**  
+Dhaka, Bangladesh | +880 1576 602 477 | yasarsamin57@gmail.com  
+[linkedin.com/in/saminyasar](https://linkedin.com/in/saminyasar) | [github.com/saminyasar](https://github.com/saminyasar) | [saminyasar.netlify.app](https://saminyasar.netlify.app)
 
-**URL**: https://lovable.dev/projects/09cedfad-126a-4cac-911b-5c2ccef612a6
+---
 
-## How can I edit this code?
+## Professional Summary
 
-There are several ways of editing your application.
+Self-taught full-stack developer with 3+ years of experience building responsive, performant web applications using **React, Next.js, Node.js, and TypeScript**. Specializes in pixel-perfect UIs with Tailwind CSS and scalable backend APIs. Proven collaborator in agile teams delivering production-grade SaaS and e-commerce solutions.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/09cedfad-126a-4cac-911b-5c2ccef612a6) and start prompting.
+## Technical Skills
 
-Changes made via Lovable will be committed automatically to this repo.
+**Languages**  
+JavaScript (ES6+), TypeScript, HTML5, CSS3/SCSS, PHP, Python, C/C++
 
-**Use your preferred IDE**
+**Frontend**  
+React.js, Next.js, Tailwind CSS, Bootstrap, Figma → Pixel-perfect UI
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Backend**  
+Node.js, Express.js, Fastify, NestJS, REST/GraphQL
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**Database**  
+MySQL, MongoDB, PostgreSQL, Redis, Prisma, Sequelize
 
-Follow these steps:
+**Tools & DevOps**  
+Git/GitHub, Docker, VS Code, Linux, CI/CD, Netlify/Vercel
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Professional Experience
 
-# Step 3: Install the necessary dependencies.
-npm i
+**Full Stack Web Developer**  
+*Joint Ventureαι AI, Dhaka, BD*  May 2024 – Present
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+-   Built React + TypeScript dashboards with real-time PostgreSQL sync via Node.js APIs
+-   Reduced page load by \***\*25%** using code-splitting, lazy loading, and Redis caching
+-   Implemented JWT + role-based auth for 10k+ enterprise users
 
-**Edit a file directly in GitHub**
+**Frontend Web Developer**  
+*Noakso Private Ltd., Dhaka, BD*  Nov 2022 – Jun 2024
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+-   Developed responsive React + Tailwind apps for construction & rental platforms
+-   Collaborated with UI/UX & backend teams to integrate REST APIs and WebSockets
+-   Improved cross-browser compatibility and Lighthouse scores to **90+**
 
-**Use GitHub Codespaces**
+**Freelance MERN Developer**  
+*Fiverr Marketplace*  Jul 2021 – Present
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+-   Delivered **20+** custom MERN projects (e-commerce, SaaS, dashboards)
+-   Converted Figma/PSD to responsive React UIs with Tailwind & animations
+-   Managed Git workflows and deployed via Netlify with **100%** client satisfaction
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## Selected Projects
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+**NSN Shopping** – E-commerce Platform  
+React (TS) + Tailwind + Stripe checkout | [Live](https://nsn-shopping.netlify.app) | [GitHub](https://github.com/saminyasar/nsn-shopping)
 
-## How can I deploy this project?
+**LabelPlug** – Logistics SaaS  
+React (TS) + Node.js/Express + PostgreSQL | [GitHub](https://github.com/saminyasar/labelplug)
 
-Simply open [Lovable](https://lovable.dev/projects/09cedfad-126a-4cac-911b-5c2ccef612a6) and click on Share -> Publish.
+**Shortly** – URL Shortener  
+HTML/SCSS + Node.js + MongoDB | [GitHub](https://github.com/saminyasar/shortly)
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## Education
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**BSc in Computer Science and Engineering**  
+*International University of Scholars, Dhaka*  Aug 2023 – Present
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**HSC in Science** – GPA: 5.00/5.00  
+*Khilgaon Government College*  2020 – 2023
+
+**SSC in Science** – GPA: 4.94/5.00  
+*Shamsul Haque Khan School & College*  2018 – 2020
+
+---
+
+## Certifications
+
+-   React Developer – freeCodeCamp (2024)
+-   TypeScript – Udemy (2024)
+-   Node.js Developer – freeCodeCamp (2023)
+-   Web Dev Contributor – Inventious 4.1, MIST (2025)
+
+---
+
+_References available upon request._
