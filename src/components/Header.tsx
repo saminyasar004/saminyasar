@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Logo from "/logo-white.png";
+import DarkLogo from "/logo-white.png";
+import LightLogo from "/logo-black.png";
+import { useTheme } from "@/hooks/use-theme";
 
 export function Header() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -33,6 +35,8 @@ export function Header() {
 		}
 	};
 
+	const { theme } = useTheme();
+
 	return (
 		<header
 			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -52,7 +56,7 @@ export function Header() {
 						className="text-2xl font-bold bg-gradient-to-r from-accent to-accent/70 bg-clip-text text-transparent hover:scale-105 transition-transform"
 					>
 						<img
-							src={Logo}
+							src={theme === "dark" ? DarkLogo : LightLogo}
 							alt="Samin Yasar"
 							className="h-10 w-auto"
 						/>
