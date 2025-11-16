@@ -15,34 +15,49 @@ import AdminSkills from "./pages/admin/Skills";
 import AdminTestimonials from "./pages/admin/Testimonials";
 import AdminBlog from "./pages/admin/Blog";
 import AdminSettings from "./pages/admin/Settings";
+import { ThemeProvider } from "./hooks/use-theme";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
-          <Route path="/admin" element={<AdminLogin />} />
-          <Route path="/admin/*" element={<AdminLayout />}>
-            <Route path="dashboard" element={<AdminDashboard />} />
-            <Route path="projects" element={<AdminProjects />} />
-            <Route path="skills" element={<AdminSkills />} />
-            <Route path="testimonials" element={<AdminTestimonials />} />
-            <Route path="blog" element={<AdminBlog />} />
-            <Route path="settings" element={<AdminSettings />} />
-          </Route>
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+	<QueryClientProvider client={queryClient}>
+		<ThemeProvider>
+			<TooltipProvider>
+				<Toaster />
+				<Sonner />
+				<BrowserRouter>
+					<Routes>
+						<Route path="/" element={<Index />} />
+						<Route path="/blog" element={<BlogList />} />
+						<Route path="/blog/:id" element={<BlogPost />} />
+						<Route path="/admin" element={<AdminLogin />} />
+						<Route path="/admin/*" element={<AdminLayout />}>
+							<Route
+								path="dashboard"
+								element={<AdminDashboard />}
+							/>
+							<Route
+								path="projects"
+								element={<AdminProjects />}
+							/>
+							<Route path="skills" element={<AdminSkills />} />
+							<Route
+								path="testimonials"
+								element={<AdminTestimonials />}
+							/>
+							<Route path="blog" element={<AdminBlog />} />
+							<Route
+								path="settings"
+								element={<AdminSettings />}
+							/>
+						</Route>
+						{/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+						<Route path="*" element={<NotFound />} />
+					</Routes>
+				</BrowserRouter>
+			</TooltipProvider>
+		</ThemeProvider>
+	</QueryClientProvider>
 );
 
 export default App;
