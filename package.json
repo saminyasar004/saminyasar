@@ -1,0 +1,23 @@
+{
+  "name": "saminyasar",
+  "version": "1.0.0",
+  "description": "This is my portfolio website.",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --watch scss/style.scss:css/style.min.css scss/responsive.scss:css/responsive.min.css --style=compressed",
+    "sass:build": "sass scss/style.scss:css/style.min.css scss/responsive.scss:css/responsive.min.css --style=compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saminyasar004/saminyasar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/saminyasar004/saminyasar/issues"
+  },
+  "homepage": "https://github.com/saminyasar004/saminyasar#readme"
+}
