@@ -30,7 +30,7 @@ export function Hero() {
 			/>
 
 			<div className="container mx-auto px-4 relative z-10">
-				<div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+				<div className="grid lg:grid-cols-2 gap-12 items-center max-w-full mx-auto">
 					{/* Left Column - Content */}
 					<div className="space-y-8 animate-fade-in-up">
 						<div className="space-y-4">

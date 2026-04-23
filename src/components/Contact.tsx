@@ -30,7 +30,7 @@ export function Contact() {
 	return (
 		<section id="contact" className="py-20 bg-section-bg">
 			<div className="container mx-auto px-4">
-				<div className="max-w-4xl mx-auto space-y-12">
+				<div className="max-w-full mx-auto space-y-12">
 					<div className="text-center space-y-4 animate-fade-in">
 						<h2 className="text-3xl md:text-5xl font-bold">
 							Get In <span className="text-accent">Touch</span>
