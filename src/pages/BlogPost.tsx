@@ -5,6 +5,8 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, ArrowLeft } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function BlogPost() {
   const { id } = useParams();
@@ -71,7 +73,7 @@ export default function BlogPost() {
 
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <div className="text-xl text-muted-foreground mb-6">{post.excerpt}</div>
-              <div className="whitespace-pre-wrap leading-relaxed">{post.content}</div>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
             </div>
           </div>
         </article>
