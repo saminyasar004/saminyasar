@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { usePortfolioStore } from "@/store/usePortfolioStore";
 import { ArrowDown, FileDown, Github, Linkedin, Mail } from "lucide-react";
-import { HeroIconCloudCircles } from "./hero-icon-cloud-circles";
+import { HeroCodeEditor } from "./HeroCodeEditor";
 
 export function Hero() {
 	const { globalSettings } = usePortfolioStore();
@@ -192,8 +192,8 @@ export function Hero() {
 						</OrbitingCircles>
 					</div> */}
 
-					<div className="relative overflow-hidden">
-						<HeroIconCloudCircles />
+					<div className="relative">
+						<HeroCodeEditor />
 					</div>
 				</div>
 
