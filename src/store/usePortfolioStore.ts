@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import userPhoto from "../../public/samin-yasar.jpeg";
 
 export interface Skill {
 	id: string;
@@ -228,11 +229,10 @@ export const usePortfolioStore = create<PortfolioStore>()(
 				linkedin: "https://linkedin.com/in/saminyasar04",
 				email: "yasarsamin57@gmail.com",
 				resumeUrl:
-					"https://drive.google.com/file/d/1rGOtLT8sncJeEORROVtNI8O2zIo5q1oY/view?usp=sharing",
+					"https://drive.google.com/file/d/1rGOtLT8sncJeEORROVtNI8O2zIo5q1oY",
 				phone: "+8801576602477",
 				location: "Dhaka, Bangladesh",
-				photoUrl:
-					"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+				photoUrl: userPhoto,
 			},
 
 			// Skills
@@ -241,7 +241,7 @@ export const usePortfolioStore = create<PortfolioStore>()(
 			updateSkill: (id, skill) =>
 				set((state) => ({
 					skills: state.skills.map((s) =>
-						s.id === id ? { ...s, ...skill } : s
+						s.id === id ? { ...s, ...skill } : s,
 					),
 				})),
 			deleteSkill: (id) =>
@@ -255,7 +255,7 @@ export const usePortfolioStore = create<PortfolioStore>()(
 			updateProject: (id, project) =>
 				set((state) => ({
 					projects: state.projects.map((p) =>
-						p.id === id ? { ...p, ...project } : p
+						p.id === id ? { ...p, ...project } : p,
 					),
 				})),
 			deleteProject: (id) =>
@@ -271,7 +271,7 @@ export const usePortfolioStore = create<PortfolioStore>()(
 			updateTestimonial: (id, testimonial) =>
 				set((state) => ({
 					testimonials: state.testimonials.map((t) =>
-						t.id === id ? { ...t, ...testimonial } : t
+						t.id === id ? { ...t, ...testimonial } : t,
 					),
 				})),
 			deleteTestimonial: (id) =>
@@ -285,7 +285,7 @@ export const usePortfolioStore = create<PortfolioStore>()(
 			updateBlogPost: (id, post) =>
 				set((state) => ({
 					blogPosts: state.blogPosts.map((p) =>
-						p.id === id ? { ...p, ...post } : p
+						p.id === id ? { ...p, ...post } : p,
 					),
 				})),
 			deleteBlogPost: (id) =>
@@ -301,6 +301,6 @@ export const usePortfolioStore = create<PortfolioStore>()(
 		}),
 		{
 			name: "portfolio-storage",
-		}
-	)
+		},
+	),
 );
