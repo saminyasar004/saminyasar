@@ -10,14 +10,15 @@ export function AdminLayout() {
   const location = useLocation();
 
   useEffect(() => {
-    const isAuthenticated = sessionStorage.getItem("admin-auth");
+    const isAuthenticated = localStorage.getItem("admin-auth");
     if (!isAuthenticated) {
       navigate("/admin");
     }
   }, [navigate]);
 
   const handleLogout = () => {
-    sessionStorage.removeItem("admin-auth");
+    localStorage.removeItem("admin-auth");
+    localStorage.removeItem("admin-token");
     navigate("/admin");
   };
 
