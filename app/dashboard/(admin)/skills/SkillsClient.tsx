@@ -12,21 +12,23 @@ import {
   DialogContent, 
   DialogHeader, 
   DialogTitle, 
-  DialogTrigger 
+  DialogTrigger,
+  DialogDescription
 } from "@/components/ui/dialog";
 import { Plus, Pencil, Trash2 } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Skill } from "@prisma/client";
+import { ImageUpload } from "@/components/ImageUpload";
 
 const skillSchema = z.object({
   name: z.string().min(1, "Name is required"),
   category: z.string().min(1, "Category is required"),
-  level: z.coerce.number().min(0).max(100).default(80),
+  level: z.number().min(0).max(100).default(80),
   iconUrl: z.string().url("Must be a valid URL").or(z.literal("")),
-  order: z.coerce.number().default(0),
+  order: z.number().default(0),
 });
 
 type SkillForm = z.infer<typeof skillSchema>;
@@ -41,11 +43,12 @@ export default function SkillsClient({ initialSkills }: SkillsClientProps) {
   const [editingSkill, setEditingSkill] = useState<Skill | null>(null);
   const router = useRouter();
 
-  const { register, handleSubmit, reset, setValue, watch, formState: { errors } } = useForm<SkillForm>({
+  const { register, handleSubmit, reset, setValue, watch, control, formState: { errors } } = useForm<SkillForm>({
     resolver: zodResolver(skillSchema),
     defaultValues: {
       level: 80,
       order: 0,
+      iconUrl: "",
     }
   });
 
@@ -128,6 +131,9 @@ export default function SkillsClient({ initialSkills }: SkillsClientProps) {
           <DialogContent className="max-w-md bg-background border-border">
             <DialogHeader>
               <DialogTitle>{editingSkill ? "Edit Skill" : "Add New Skill"}</DialogTitle>
+              <DialogDescription>
+                List your technical skills and proficiency levels.
+              </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="space-y-2">
@@ -155,13 +161,23 @@ export default function SkillsClient({ initialSkills }: SkillsClientProps) {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="iconUrl">Icon URL</Label>
-                <Input id="iconUrl" {...register("iconUrl")} placeholder="https://..." />
+                <Controller
+                  name="iconUrl"
+                  control={control}
+                  render={({ field }) => (
+                    <ImageUpload
+                      value={field.value}
+                      onChange={field.onChange}
+                      label="Skill Icon"
+                    />
+                  )}
+                />
+                {errors.iconUrl && <p className="text-xs text-destructive">{errors.iconUrl.message}</p>}
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="order">Order</Label>
-                <Input id="order" type="number" {...register("order")} />
+                <Input id="order" type="number" {...register("order", { valueAsNumber: true })} />
               </div>
 
               <div className="flex justify-end gap-2 pt-4">

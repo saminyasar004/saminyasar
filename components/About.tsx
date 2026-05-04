@@ -104,6 +104,7 @@ export function About() {
                       src={globalSettings.photoUrl}
                       alt="Samin Yasar"
                       fill
+                      sizes="(max-width: 768px) 100vw, 448px"
                       className="object-cover rounded-[1.3rem] transition-transform hover:scale-105 duration-500"
                     />
 

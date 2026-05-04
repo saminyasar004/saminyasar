@@ -13,8 +13,10 @@ import {
   DialogContent, 
   DialogHeader, 
   DialogTitle, 
-  DialogTrigger 
+  DialogTrigger,
+  DialogDescription
 } from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
 import { 
   AlertDialog,
   AlertDialogAction,
@@ -26,11 +28,12 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { Plus, Pencil, Trash2 } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Blog } from "@prisma/client";
+import { ImageUpload } from "@/components/ImageUpload";
 
 const blogSchema = z.object({
   title: z.string().min(1, "Title is required"),
@@ -53,10 +56,11 @@ export default function BlogsClient({ initialBlogs }: BlogsClientProps) {
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
   const router = useRouter();
 
-  const { register, handleSubmit, reset, setValue, watch, formState: { errors } } = useForm<BlogForm>({
+  const { register, handleSubmit, reset, setValue, watch, control, formState: { errors } } = useForm<BlogForm>({
     resolver: zodResolver(blogSchema),
     defaultValues: {
       published: false,
+      coverImage: "",
     }
   });
 
@@ -145,6 +149,9 @@ export default function BlogsClient({ initialBlogs }: BlogsClientProps) {
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-background border-border">
             <DialogHeader>
               <DialogTitle>{editingBlog ? "Edit Blog" : "Add New Blog"}</DialogTitle>
+              <DialogDescription>
+                Fill in the details for your blog post. Markdown is supported for the content.
+              </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -182,8 +189,18 @@ export default function BlogsClient({ initialBlogs }: BlogsClientProps) {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="coverImage">Cover Image URL</Label>
-                  <Input id="coverImage" {...register("coverImage")} />
+                  <Controller
+                    name="coverImage"
+                    control={control}
+                    render={({ field }) => (
+                      <ImageUpload
+                        value={field.value}
+                        onChange={field.onChange}
+                        label="Cover Image"
+                      />
+                    )}
+                  />
+                  {errors.coverImage && <p className="text-xs text-destructive">{errors.coverImage.message}</p>}
                 </div>
                 <div className="flex items-center space-x-2 pt-8">
                   <Checkbox 
@@ -239,6 +256,4 @@ export default function BlogsClient({ initialBlogs }: BlogsClientProps) {
   );
 }
 
-function cn(...classes: any[]) {
-  return classes.filter(Boolean).join(" ");
-}
+

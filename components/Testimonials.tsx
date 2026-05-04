@@ -41,6 +41,7 @@ export function Testimonials({ initialTestimonials }: TestimonialsProps) {
                           src={testimonial.avatarUrl}
                           alt={testimonial.author}
                           fill
+                          sizes="48px"
                           className="object-cover"
                         />
                       )}

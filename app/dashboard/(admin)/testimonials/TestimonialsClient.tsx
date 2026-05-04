@@ -12,14 +12,16 @@ import {
   DialogContent, 
   DialogHeader, 
   DialogTitle, 
-  DialogTrigger 
+  DialogTrigger,
+  DialogDescription
 } from "@/components/ui/dialog";
 import { Plus, Pencil, Trash2 } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Testimonial } from "@prisma/client";
+import { ImageUpload } from "@/components/ImageUpload";
 
 const testimonialSchema = z.object({
   author: z.string().min(1, "Author is required"),
@@ -27,8 +29,8 @@ const testimonialSchema = z.object({
   company: z.string().optional(),
   content: z.string().min(1, "Content is required"),
   avatarUrl: z.string().url("Must be a valid URL").or(z.literal("")),
-  rating: z.coerce.number().min(1).max(5).default(5),
-  order: z.coerce.number().default(0),
+  rating: z.number().min(1).max(5).default(5),
+  order: z.number().default(0),
 });
 
 type TestimonialForm = z.infer<typeof testimonialSchema>;
@@ -43,11 +45,12 @@ export default function TestimonialsClient({ initialTestimonials }: Testimonials
   const [editingTestimonial, setEditingTestimonial] = useState<Testimonial | null>(null);
   const router = useRouter();
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<TestimonialForm>({
+  const { register, handleSubmit, reset, control, formState: { errors } } = useForm<TestimonialForm>({
     resolver: zodResolver(testimonialSchema),
     defaultValues: {
       rating: 5,
       order: 0,
+      avatarUrl: "",
     }
   });
 
@@ -132,6 +135,9 @@ export default function TestimonialsClient({ initialTestimonials }: Testimonials
           <DialogContent className="max-w-2xl bg-background border-border">
             <DialogHeader>
               <DialogTitle>{editingTestimonial ? "Edit Testimonial" : "Add New Testimonial"}</DialogTitle>
+              <DialogDescription>
+                Add feedback from clients or colleagues to build credibility.
+              </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -154,7 +160,7 @@ export default function TestimonialsClient({ initialTestimonials }: Testimonials
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="rating">Rating (1-5)</Label>
-                  <Input id="rating" type="number" {...register("rating")} />
+                  <Input id="rating" type="number" {...register("rating", { valueAsNumber: true })} />
                 </div>
               </div>
 
@@ -166,12 +172,22 @@ export default function TestimonialsClient({ initialTestimonials }: Testimonials
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="avatarUrl">Avatar URL</Label>
-                  <Input id="avatarUrl" {...register("avatarUrl")} />
+                  <Controller
+                    name="avatarUrl"
+                    control={control}
+                    render={({ field }) => (
+                      <ImageUpload
+                        value={field.value}
+                        onChange={field.onChange}
+                        label="Author Avatar"
+                      />
+                    )}
+                  />
+                  {errors.avatarUrl && <p className="text-xs text-destructive">{errors.avatarUrl.message}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="order">Order</Label>
-                  <Input id="order" type="number" {...register("order")} />
+                  <Input id="order" type="number" {...register("order", { valueAsNumber: true })} />
                 </div>
               </div>
 

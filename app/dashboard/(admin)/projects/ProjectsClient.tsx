@@ -13,7 +13,8 @@ import {
   DialogContent, 
   DialogHeader, 
   DialogTitle, 
-  DialogTrigger 
+  DialogTrigger,
+  DialogDescription
 } from "@/components/ui/dialog";
 import { 
   AlertDialog,
@@ -27,11 +28,12 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Plus, Pencil, Trash2 } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Project } from "@prisma/client";
+import { ImageUpload } from "@/components/ImageUpload";
 
 const projectSchema = z.object({
   title: z.string().min(1, "Title is required"),
@@ -41,7 +43,7 @@ const projectSchema = z.object({
   liveUrl: z.string().url("Must be a valid URL").or(z.literal("")),
   githubUrl: z.string().url("Must be a valid URL").or(z.literal("")),
   featured: z.boolean().default(false),
-  order: z.coerce.number().default(0),
+  order: z.number().default(0),
 });
 
 type ProjectForm = z.infer<typeof projectSchema>;
@@ -57,11 +59,12 @@ export default function ProjectsClient({ initialProjects }: ProjectsClientProps)
   const [isDeleting, setIsDeleting] = useState(false);
   const router = useRouter();
 
-  const { register, handleSubmit, reset, setValue, watch, formState: { errors } } = useForm<ProjectForm>({
+  const { register, handleSubmit, reset, setValue, watch, control, formState: { errors } } = useForm<ProjectForm>({
     resolver: zodResolver(projectSchema),
     defaultValues: {
       featured: false,
       order: 0,
+      imageUrl: "",
     }
   });
 
@@ -155,6 +158,9 @@ export default function ProjectsClient({ initialProjects }: ProjectsClientProps)
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-background border-border">
             <DialogHeader>
               <DialogTitle>{editingProject ? "Edit Project" : "Add New Project"}</DialogTitle>
+              <DialogDescription>
+                Provide details about your project to showcase in your portfolio.
+              </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -165,7 +171,7 @@ export default function ProjectsClient({ initialProjects }: ProjectsClientProps)
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="order">Order</Label>
-                  <Input id="order" type="number" {...register("order")} />
+                  <Input id="order" type="number" {...register("order", { valueAsNumber: true })} />
                 </div>
               </div>
 
@@ -182,9 +188,18 @@ export default function ProjectsClient({ initialProjects }: ProjectsClientProps)
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="imageUrl">Image URL</Label>
-                  <Input id="imageUrl" {...register("imageUrl")} />
+                <div className="space-y-2 col-span-full">
+                  <Controller
+                    name="imageUrl"
+                    control={control}
+                    render={({ field }) => (
+                      <ImageUpload
+                        value={field.value}
+                        onChange={field.onChange}
+                        label="Project Image"
+                      />
+                    )}
+                  />
                   {errors.imageUrl && <p className="text-xs text-destructive">{errors.imageUrl.message}</p>}
                 </div>
                 <div className="space-y-2">
