@@ -9,7 +9,7 @@ cloudinary.config({
 
 /**
  * Extracts the public_id from a Cloudinary URL.
- * Example URL: https://res.cloudinary.com/demo/image/upload/v1234567890/folder/image_name.jpg
+ * Example URL: https://res.cloudinary.com/demo/image/upload/v0000000000/folder/image_name.jpg
  * public_id: folder/image_name
  */
 export const extractPublicId = (url: string): string | null => {
@@ -18,7 +18,7 @@ export const extractPublicId = (url: string): string | null => {
     const uploadIndex = parts.indexOf("upload");
     if (uploadIndex === -1) return null;
 
-    // The public_id starts after the version (which looks like v1234567890)
+    // The public_id starts after the version (which looks like v0000000000)
     // or immediately after 'upload' if no version is present.
     let publicIdWithExtension = "";
     if (parts[uploadIndex + 1].startsWith("v") && !isNaN(Number(parts[uploadIndex + 1].slice(1)))) {
