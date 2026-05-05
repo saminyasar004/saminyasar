@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { Circle } from "lucide-react";
 
 const codeLines = [
-	{ text: "const", color: "text-purple-400" },
-	{ text: " developer", color: "text-blue-400" },
-	{ text: " = ", color: "text-foreground" },
+	{ text: "const ", color: "text-purple-400" },
+	{ text: "developer ", color: "text-blue-400" },
+	{ text: "= ", color: "text-foreground" },
 	{ text: "{", color: "text-yellow-400" },
 ];
 
@@ -130,7 +130,7 @@ export function HeroCodeEditor() {
 
 						<div className="flex-1 leading-7">
 							{/* First line: const developer = { */}
-							<div className="flex flex-wrap">
+							<div className="flex flex-wrap whitespace-pre">
 								{codeLines.map((token, i) => (
 									<span key={i} className={token.color}>
 										{token.text}
@@ -142,7 +142,7 @@ export function HeroCodeEditor() {
 							{properties.map((prop, i) => (
 								<div
 									key={prop.key}
-									className={`pl-4 transition-all duration-500 ${
+									className={`pl-4 whitespace-pre transition-all duration-500 ${
 										i < visibleLines
 											? "opacity-100 translate-x-0"
 											: "opacity-0 -translate-x-2"
