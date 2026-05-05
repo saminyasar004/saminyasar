@@ -12,18 +12,46 @@ const codeLines = [
 
 const properties = [
 	{ key: "name", value: "'Samin Yasar'", valueColor: "text-emerald-400" },
-	{ key: "role", value: "'Full Stack Developer'", valueColor: "text-emerald-400" },
-	{ key: "experience", value: "'4+ years'", valueColor: "text-emerald-400" },
-	{ key: "stack", value: "['React', 'Node', 'TS', 'Postgres']", valueColor: "text-orange-300" },
+	{
+		key: "role",
+		value: "'Full Stack Developer'",
+		valueColor: "text-emerald-400",
+	},
+	{
+		key: "experience",
+		value: "'2.5+ years'",
+		valueColor: "text-emerald-400",
+	},
+	{
+		key: "stack",
+		value: "['React', 'Next', 'Nest', 'Postgres']",
+		valueColor: "text-orange-300",
+	},
 	{ key: "available", value: "true", valueColor: "text-pink-400" },
-	{ key: "passion", value: "'Building scalable apps'", valueColor: "text-emerald-400" },
+	{
+		key: "passion",
+		value: "'Building scalable apps'",
+		valueColor: "text-emerald-400",
+	},
 ];
 
 const techBadges = [
-	{ name: "TypeScript", color: "from-blue-500/30 to-blue-600/10", delay: "0s" },
+	{
+		name: "TypeScript",
+		color: "from-blue-500/30 to-blue-600/10",
+		delay: "0s",
+	},
 	{ name: "React", color: "from-cyan-500/30 to-cyan-600/10", delay: "0.4s" },
-	{ name: "Node.js", color: "from-green-500/30 to-green-600/10", delay: "0.8s" },
-	{ name: "PostgreSQL", color: "from-indigo-500/30 to-indigo-600/10", delay: "1.2s" },
+	{
+		name: "Node.js",
+		color: "from-green-500/30 to-green-600/10",
+		delay: "0.8s",
+	},
+	{
+		name: "PostgreSQL",
+		color: "from-indigo-500/30 to-indigo-600/10",
+		delay: "1.2s",
+	},
 ];
 
 export function HeroCodeEditor() {
@@ -91,11 +119,13 @@ export function HeroCodeEditor() {
 					{/* Line numbers + code */}
 					<div className="flex gap-4">
 						<div className="flex flex-col text-muted-foreground/50 text-right select-none text-xs pt-0.5">
-							{Array.from({ length: properties.length + 3 }).map((_, i) => (
-								<span key={i} className="leading-7">
-									{i + 1}
-								</span>
-							))}
+							{Array.from({ length: properties.length + 3 }).map(
+								(_, i) => (
+									<span key={i} className="leading-7">
+										{i + 1}
+									</span>
+								),
+							)}
 						</div>
 
 						<div className="flex-1 leading-7">
@@ -118,9 +148,13 @@ export function HeroCodeEditor() {
 											: "opacity-0 -translate-x-2"
 									}`}
 								>
-									<span className="text-cyan-400">{prop.key}</span>
+									<span className="text-cyan-400">
+										{prop.key}
+									</span>
 									<span className="text-foreground">: </span>
-									<span className={prop.valueColor}>{prop.value}</span>
+									<span className={prop.valueColor}>
+										{prop.value}
+									</span>
 									<span className="text-foreground">,</span>
 								</div>
 							))}
@@ -128,7 +162,9 @@ export function HeroCodeEditor() {
 							{/* Closing brace + cursor */}
 							<div
 								className={`transition-opacity duration-500 ${
-									visibleLines >= properties.length ? "opacity-100" : "opacity-0"
+									visibleLines >= properties.length
+										? "opacity-100"
+										: "opacity-0"
 								}`}
 							>
 								<span className="text-yellow-400">{"}"}</span>
@@ -156,8 +192,12 @@ export function HeroCodeEditor() {
 				{/* Status bar */}
 				<div className="flex items-center justify-between px-4 py-2 bg-gradient-to-r from-accent/20 via-accent/10 to-transparent border-t border-border/50 text-xs font-mono">
 					<div className="flex items-center gap-3">
-						<span className="text-accent font-semibold">⚡ TypeScript</span>
-						<span className="text-muted-foreground hidden sm:inline">UTF-8</span>
+						<span className="text-accent font-semibold">
+							⚡ TypeScript
+						</span>
+						<span className="text-muted-foreground hidden sm:inline">
+							UTF-8
+						</span>
 					</div>
 					<div className="flex items-center gap-2 text-muted-foreground">
 						<span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -176,8 +216,12 @@ export function HeroCodeEditor() {
 						{"</>"}
 					</div>
 					<div>
-						<div className="text-xs font-semibold text-foreground">50+ Projects</div>
-						<div className="text-[10px] text-muted-foreground">Shipped & Counting</div>
+						<div className="text-xs font-semibold text-foreground">
+							50+ Projects
+						</div>
+						<div className="text-[10px] text-muted-foreground">
+							Shipped & Counting
+						</div>
 					</div>
 				</div>
 			</div>
