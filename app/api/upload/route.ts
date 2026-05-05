@@ -3,7 +3,7 @@ import { cloudinary } from "@/lib/cloudinary";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
-export async function POST(req: Request) {
+export async function POST(req: Request): Promise<Response> {
   const session = await getServerSession(authOptions);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
       fileSize: file.size,
     });
 
-    return new Promise((resolve, reject) => {
+    return new Promise<Response>((resolve, reject) => {
       cloudinary.uploader.upload_stream(
         {
           resource_type: "image",
