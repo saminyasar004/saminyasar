@@ -27,9 +27,9 @@ import Image from "next/image";
 const skillSchema = z.object({
   name: z.string().min(1, "Name is required"),
   category: z.string().min(1, "Category is required"),
-  level: z.number().min(0).max(100).default(80),
+  level: z.number().min(0).max(100),
   iconUrl: z.string().url("Must be a valid URL").or(z.literal("")),
-  order: z.number().default(0),
+  order: z.number(),
 });
 
 type SkillForm = z.infer<typeof skillSchema>;
@@ -191,7 +191,7 @@ export default function SkillsClient({ initialSkills }: SkillsClientProps) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {skills.map((s) => (
+        {skills.map((s: Skill) => (
           <Card key={s.id} className="p-4 glass-strong border-border hover:border-accent/50 transition-all flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 flex items-center justify-center bg-secondary rounded p-1 relative">

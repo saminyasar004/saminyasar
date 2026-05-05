@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { Blog } from "@prisma/client";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
@@ -29,7 +30,7 @@ export default async function BlogListPage() {
             </div>
 
             <div className="grid gap-8">
-              {blogs.map((post) => (
+              {blogs.map((post: Blog) => (
                 <Card key={post.id} className="overflow-hidden glass-strong border-border hover:border-accent transition-all group">
                   <div className="flex flex-col md:flex-row h-full">
                     <div className="relative w-full md:w-80 h-64 md:h-auto overflow-hidden bg-muted">

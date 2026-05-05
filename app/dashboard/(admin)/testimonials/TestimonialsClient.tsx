@@ -29,8 +29,8 @@ const testimonialSchema = z.object({
   company: z.string().optional(),
   content: z.string().min(1, "Content is required"),
   avatarUrl: z.string().url("Must be a valid URL").or(z.literal("")),
-  rating: z.number().min(1).max(5).default(5),
-  order: z.number().default(0),
+  rating: z.number().min(1).max(5),
+  order: z.number(),
 });
 
 type TestimonialForm = z.infer<typeof testimonialSchema>;
@@ -201,7 +201,7 @@ export default function TestimonialsClient({ initialTestimonials }: Testimonials
       </div>
 
       <div className="grid grid-cols-1 gap-4">
-        {testimonials.map((t) => (
+        {testimonials.map((t: Testimonial) => (
           <Card key={t.id} className="p-4 glass-strong border-border hover:border-accent/50 transition-all">
             <div className="flex justify-between items-start">
               <div className="flex gap-4">

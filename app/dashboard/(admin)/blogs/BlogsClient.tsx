@@ -41,7 +41,7 @@ const blogSchema = z.object({
   content: z.string().min(1, "Content is required"),
   excerpt: z.string().optional(),
   coverImage: z.string().url("Must be a valid URL").or(z.literal("")),
-  published: z.boolean().default(false),
+  published: z.boolean(),
 });
 
 type BlogForm = z.infer<typeof blogSchema>;
@@ -222,7 +222,7 @@ export default function BlogsClient({ initialBlogs }: BlogsClientProps) {
       </div>
 
       <div className="grid grid-cols-1 gap-4">
-        {blogs.map((blog) => (
+        {blogs.map((blog: Blog) => (
           <Card key={blog.id} className="p-4 glass-strong border-border hover:border-accent/50 transition-all">
             <div className="flex justify-between items-center">
               <div>

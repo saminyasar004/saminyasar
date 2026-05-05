@@ -42,8 +42,8 @@ const projectSchema = z.object({
   imageUrl: z.string().url("Must be a valid URL").or(z.literal("")),
   liveUrl: z.string().url("Must be a valid URL").or(z.literal("")),
   githubUrl: z.string().url("Must be a valid URL").or(z.literal("")),
-  featured: z.boolean().default(false),
-  order: z.number().default(0),
+  featured: z.boolean(),
+  order: z.number(),
 });
 
 type ProjectForm = z.infer<typeof projectSchema>;
@@ -235,7 +235,7 @@ export default function ProjectsClient({ initialProjects }: ProjectsClientProps)
       </div>
 
       <div className="grid grid-cols-1 gap-4">
-        {projects.map((project) => (
+        {projects.map((project: Project) => (
           <Card key={project.id} className="p-4 glass-strong border-border hover:border-accent/50 transition-all">
             <div className="flex flex-col md:flex-row gap-6">
               <div className="w-full md:w-48 h-32 bg-muted rounded-md overflow-hidden relative">
