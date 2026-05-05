@@ -67,6 +67,7 @@ export function Skills({ initialSkills }: SkillsProps) {
                               fill
                               sizes="16px"
                               className="object-contain"
+                              unoptimized={skill.iconUrl.includes("/raw/upload/") || skill.iconUrl.endsWith(".svg")}
                             />
                           </div>
                         )}

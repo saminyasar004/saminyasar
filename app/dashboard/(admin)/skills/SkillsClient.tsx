@@ -22,6 +22,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { Skill } from "@prisma/client";
 import { ImageUpload } from "@/components/ImageUpload";
+import Image from "next/image";
 
 const skillSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -193,8 +194,18 @@ export default function SkillsClient({ initialSkills }: SkillsClientProps) {
         {skills.map((s) => (
           <Card key={s.id} className="p-4 glass-strong border-border hover:border-accent/50 transition-all flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 flex items-center justify-center bg-secondary rounded p-1">
-                {s.iconUrl ? <img src={s.iconUrl} alt={s.name} className="w-full h-full object-contain" /> : <div className="text-xs font-bold">{s.name[0]}</div>}
+              <div className="w-8 h-8 flex items-center justify-center bg-secondary rounded p-1 relative">
+                {s.iconUrl ? (
+                  <Image 
+                    src={s.iconUrl} 
+                    alt={s.name} 
+                    fill
+                    className="object-contain p-1"
+                    unoptimized={s.iconUrl.includes("/raw/upload/") || s.iconUrl.endsWith(".svg")}
+                  />
+                ) : (
+                  <div className="text-xs font-bold">{s.name[0]}</div>
+                )}
               </div>
               <div>
                 <h3 className="font-bold">{s.name}</h3>

@@ -64,6 +64,7 @@ export function ImageUpload({ value, onChange, label }: ImageUploadProps) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover"
+            unoptimized={value.includes("/raw/upload/") || value.endsWith(".svg")}
           />
           <button
             onClick={handleRemove}
