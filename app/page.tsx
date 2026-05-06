@@ -12,27 +12,30 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
 export default async function Home() {
-  const [projects, testimonials, blogs, skills] = await Promise.all([
-    prisma.project.findMany({ orderBy: { order: "asc" } }),
-    prisma.testimonial.findMany({ orderBy: { order: "asc" } }),
-    prisma.blog.findMany({ where: { published: true }, orderBy: { publishedAt: "desc" } }),
-    prisma.skill.findMany({ orderBy: { order: "asc" } }),
-  ]);
+	const [projects, testimonials, blogs, skills] = await Promise.all([
+		prisma.project.findMany({ orderBy: { order: "asc" } }),
+		prisma.testimonial.findMany({ orderBy: { order: "asc" } }),
+		prisma.blog.findMany({
+			where: { published: true },
+			orderBy: { publishedAt: "desc" },
+		}),
+		prisma.skill.findMany({ orderBy: { order: "asc" } }),
+	]);
 
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Skills initialSkills={skills} />
-        <Experience />
-        <Projects initialProjects={projects} />
-        <Testimonials initialTestimonials={testimonials} />
-        <Blog initialBlogs={blogs} />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  );
+	return (
+		<div className="min-h-screen bg-background">
+			<Header />
+			<main>
+				<Hero />
+				<About />
+				<Skills initialSkills={skills} />
+				<Experience />
+				<Projects initialProjects={projects} />
+				{/* <Testimonials initialTestimonials={testimonials} /> */}
+				<Blog initialBlogs={blogs} />
+				<Contact />
+			</main>
+			<Footer />
+		</div>
+	);
 }
