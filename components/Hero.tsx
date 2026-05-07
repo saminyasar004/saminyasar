@@ -21,9 +21,9 @@ export function Hero() {
 						<span className="text-brand">Samin Yasar</span>
 					</h1>
 					<p className="mt-4 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
-						Full Stack Software Developer creating innovative, scalable web &
-						mobile applications. I have been coding since 2020, developing my
-						ideas into real-world products.
+						Full Stack Developer focused on building scalable, innovative web
+						and mobile applications, productizing ideas, and solving real-world
+						problems.
 					</p>
 
 					<div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
@@ -32,7 +32,7 @@ export function Hero() {
 							{globalSettings.location}
 						</span>
 						<span className="inline-flex items-center gap-1.5">
-							<Calendar className="h-3.5 w-3.5 text-brand" /> 2.5+ years
+							<Calendar className="h-3.5 w-3.5 text-brand" /> 3.5+ years
 							experience
 						</span>
 						<span className="inline-flex items-center gap-1.5 text-brand">
@@ -121,11 +121,11 @@ export function Hero() {
 						<span className="text-syntax-string">'Full Stack Developer'</span>
 						{`,
     `}
-						<span className="text-syntax-fn">experience</span>
+						{/* <span className="text-syntax-fn">experience</span>
 						{`:  `}
-						<span className="text-syntax-string">'2.5+ years'</span>
-						{`,
-    `}
+						<span className="text-syntax-string">'2.5+ years'</span> */}
+						{/* {`, */}
+						{/* `} */}
 						<span className="text-syntax-fn">stack</span>
 						{`:       [`}
 						<span className="text-syntax-string">'React'</span>
