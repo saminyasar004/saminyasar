@@ -1,9 +1,8 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
-import Image from "next/image";
+"use client";
+
+import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import { Project } from "@prisma/client";
+import { SectionHeading } from "./SectionHeading";
 
 interface ProjectsProps {
   initialProjects: Project[];
@@ -11,108 +10,37 @@ interface ProjectsProps {
 
 export function Projects({ initialProjects }: ProjectsProps) {
   return (
-    <section
-      id="projects"
-      className="py-20 bg-section-bg relative overflow-hidden"
-    >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231DD881' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
-          }}
-        />
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-full mx-auto space-y-12">
-          <div className="text-center space-y-4 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Featured <span className="text-accent">Projects</span>
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Some of the projects I've built
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {initialProjects.map((project, index) => (
-              <Card
-                key={project.id}
-                className="overflow-hidden glass-strong border-border hover:border-accent transition-all hover:shadow-lg hover:shadow-accent/20 animate-fade-in-up group duration-300"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Project Image */}
-                <div className="relative h-48 overflow-hidden bg-muted">
-                  {project.imageUrl && (
-                    <Image
-                      src={project.imageUrl}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform group-hover:scale-110 duration-500"
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-
-                <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-semibold group-hover:text-accent transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground line-clamp-3">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, techIndex) => (
-                      <Badge
-                        key={techIndex}
-                        variant="secondary"
-                        className="glass bg-secondary/80 hover:bg-accent hover:text-accent-foreground transition-all"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-3 pt-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all"
-                      asChild
-                    >
-                      <a
-                        href={project.githubUrl || "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button
-                      size="sm"
-                      className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground transition-all"
-                      asChild
-                    >
-                      <a
-                        href={project.liveUrl || "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Live
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
+    <section id="projects" className="container-page py-20 border-t border-border">
+      <SectionHeading tag="Projects" title="featured work" />
+      <div className="grid gap-4 md:grid-cols-2">
+        {initialProjects.map((p) => (
+          <article key={p.id} className="group rounded-lg border border-border bg-surface p-5 hover:border-brand/50 transition-colors">
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="text-base font-medium text-foreground">{p.title}</h3>
+              <a href={p.liveUrl || "#"} target="_blank" rel="noreferrer" className="text-muted-foreground group-hover:text-foreground transition-colors">
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-2">{p.description}</p>
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {p.tags.map((t) => (
+                <span key={t} className="chip text-[11px]">{t}</span>
+              ))}
+            </div>
+            <div className="mt-4 flex items-center gap-3 text-xs">
+              {p.githubUrl && p.githubUrl !== "#" && (
+                <a href={p.githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                  <Github className="h-3.5 w-3.5" /> Code
+                </a>
+              )}
+              {p.liveUrl && (
+                <a href={p.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                  <ExternalLink className="h-3.5 w-3.5" /> Live
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

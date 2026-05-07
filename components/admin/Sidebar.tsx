@@ -8,9 +8,9 @@ import {
   Briefcase, 
   FileText, 
   MessageSquare, 
-  Settings, 
   LogOut,
-  Layers
+  Layers,
+  Code2
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -29,24 +29,27 @@ export function Sidebar() {
   if (pathname === "/dashboard/login") return null;
 
   return (
-    <div className="w-64 border-r border-border bg-card flex flex-col h-screen sticky top-0">
+    <div className="w-64 border-r border-border bg-surface flex flex-col h-screen sticky top-0">
       <div className="p-6">
-        <h2 className="text-xl font-bold text-accent">Admin Panel</h2>
+        <Link href="/" className="flex items-center gap-2 font-medium">
+          <Code2 className="h-5 w-5 text-brand" />
+          <span className="text-lg tracking-tight text-foreground">Admin<span className="text-brand">.</span>sh</span>
+        </Link>
       </div>
       
-      <nav className="flex-1 px-4 space-y-2">
+      <nav className="flex-1 px-4 space-y-1">
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
             className={cn(
-              "flex items-center gap-3 px-4 py-3 rounded-lg transition-all",
+              "flex items-center gap-3 px-4 py-2.5 rounded-md transition-all text-sm",
               pathname === item.href 
-                ? "bg-accent text-accent-foreground" 
-                : "text-muted-foreground hover:bg-secondary"
+                ? "bg-surface-2 text-brand border border-border" 
+                : "text-muted-foreground hover:text-foreground hover:bg-surface-2"
             )}
           >
-            <item.icon className="h-5 w-5" />
+            <item.icon className={cn("h-4 w-4", pathname === item.href ? "text-brand" : "text-muted-foreground")} />
             <span>{item.label}</span>
           </Link>
         ))}
@@ -55,11 +58,11 @@ export function Sidebar() {
       <div className="p-4 border-t border-border">
         <Button
           variant="ghost"
-          className="w-full justify-start text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+          className="w-full justify-start text-muted-foreground hover:text-destructive hover:bg-destructive/10 text-xs font-mono"
           onClick={() => signOut({ callbackUrl: "/" })}
         >
-          <LogOut className="h-5 w-5 mr-3" />
-          Sign Out
+          <LogOut className="h-4 w-4 mr-3" />
+          $ exit
         </Button>
       </div>
     </div>

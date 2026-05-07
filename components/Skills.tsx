@@ -1,6 +1,8 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+"use client";
+
 import { Skill } from "@prisma/client";
+import { CodeCard } from "./CodeCard";
+import { SectionHeading } from "./SectionHeading";
 import Image from "next/image";
 
 interface SkillsProps {
@@ -23,70 +25,49 @@ export function Skills({ initialSkills }: SkillsProps) {
 	return (
 		<section
 			id="skills"
-			className="py-20 bg-background relative overflow-hidden"
+			className="container-page py-20 border-t border-border"
 		>
-			{/* Gradient background */}
-			<div className="absolute inset-0 bg-gradient-to-b from-section-bg/50 to-background" />
-
-			<div className="container mx-auto px-4 relative z-10">
-				<div className="max-w-full mx-auto space-y-12">
-					<div className="text-center space-y-4 animate-fade-in">
-						<h2 className="text-3xl md:text-5xl font-bold">
-							Tech <span className="text-accent">Stack</span>
-						</h2>
-						<p className="text-muted-foreground text-lg">
-							Technologies I work with to build amazing products
-						</p>
+			<SectionHeading tag="Skills" title="tech stack" />
+			<div className="grid md:grid-cols-2 gap-5">
+				{Object.entries(skillsByCategory).map(([group, items], idx) => (
+					<div
+						key={group}
+						className={
+							idx === Object.entries(skillsByCategory).length - 1 &&
+							Object.entries(skillsByCategory).length % 2 !== 0
+								? "md:col-span-2"
+								: ""
+						}
+					>
+						<CodeCard
+							title={`${group.toLowerCase().replace(/\s|&/g, "-")}.json`}
+						>
+							<div className="flex flex-wrap gap-2">
+								{items.map((s) => (
+									<span
+										key={s.id}
+										className="chip text-foreground hover:border-brand/50 hover:text-brand transition-colors"
+									>
+										{s.iconUrl && (
+											<Image
+												src={s.iconUrl}
+												alt={s.name}
+												width={14}
+												height={14}
+												className="w-3.5 h-3.5 object-contain opacity-70 group-hover:opacity-100"
+												unoptimized={
+													s.iconUrl.includes("/raw/upload/") ||
+													s.iconUrl.endsWith(".svg")
+												}
+											/>
+										)}
+										<span className="text-syntax-string">"{s.name}"</span>
+									</span>
+								))}
+							</div>
+						</CodeCard>
 					</div>
-
-					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-						{Object.entries(skillsByCategory).map(
-							([category, categorySkills], index) => (
-								<Card
-									key={category}
-									className="p-6 glass-strong border-border hover:border-accent transition-all hover:shadow-lg hover:shadow-accent/20 animate-fade-in-up group"
-									style={{
-										animationDelay: `${index * 0.1}s`,
-									}}
-								>
-									<h3 className="text-xl font-semibold mb-4 text-accent transition-transform">
-										{category}
-									</h3>
-									<div className="flex flex-wrap gap-2">
-										{categorySkills.map((skill) => (
-											<Badge
-												key={skill.id}
-												variant="secondary"
-												className="glass bg-secondary/80 hover:bg-accent hover:text-accent-foreground transition-all cursor-default px-3 py-1.5 flex items-center gap-2"
-											>
-												{skill.iconUrl && (
-													<div className="relative w-4 h-4">
-														<Image
-															src={skill.iconUrl}
-															alt={skill.name}
-															fill
-															sizes="16px"
-															className="object-contain"
-															unoptimized={
-																skill.iconUrl.includes(
-																	"/raw/upload/",
-																) ||
-																skill.iconUrl.endsWith(
-																	".svg",
-																)
-															}
-														/>
-													</div>
-												)}
-												<span>{skill.name}</span>
-											</Badge>
-										))}
-									</div>
-								</Card>
-							),
-						)}
-					</div>
-				</div>
+				))}
 			</div>
 		</section>
 	);

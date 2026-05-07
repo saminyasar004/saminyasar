@@ -32,7 +32,7 @@ export default async function Home() {
 				<Experience />
 				<Projects initialProjects={projects} />
 				{/* <Testimonials initialTestimonials={testimonials} /> */}
-				<Blog initialBlogs={blogs} />
+				{/* <Blog initialBlogs={blogs} /> */}
 				<Contact />
 			</main>
 			<Footer />
