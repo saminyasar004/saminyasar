@@ -1,5 +1,8 @@
-import { Card } from "@/components/ui/card";
+"use client";
+
 import { Testimonial } from "@prisma/client";
+import { CodeCard } from "./CodeCard";
+import { SectionHeading } from "./SectionHeading";
 import Image from "next/image";
 
 interface TestimonialsProps {
@@ -8,56 +11,38 @@ interface TestimonialsProps {
 
 export function Testimonials({ initialTestimonials }: TestimonialsProps) {
   return (
-    <section
-      id="testimonials"
-      className="py-20 bg-background relative overflow-hidden"
-    >
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-full mx-auto space-y-12">
-          <div className="text-center space-y-4 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Kind <span className="text-accent">Words</span>
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Testimonials from people I've worked with
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {initialTestimonials.map((testimonial, index) => (
-              <Card
-                key={testimonial.id}
-                className="p-8 glass-strong border-border hover:border-accent transition-all hover:shadow-lg hover:shadow-accent/20 animate-fade-in-up group"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="space-y-6">
-                  <p className="text-muted-foreground italic leading-relaxed">
-                    "{testimonial.content}"
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-muted">
-                      {testimonial.avatarUrl && (
-                        <Image
-                          src={testimonial.avatarUrl}
-                          alt={testimonial.author}
-                          fill
-                          sizes="48px"
-                          className="object-cover"
-                        />
-                      )}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg">{testimonial.author}</h4>
-                      <p className="text-sm text-accent font-medium">
-                        {testimonial.role} {testimonial.company && `@ ${testimonial.company}`}
-                      </p>
-                    </div>
-                  </div>
+    <section id="testimonials" className="container-page py-20 border-t border-border">
+      <SectionHeading tag="Testimonials" title="kind words" />
+      <div className="grid md:grid-cols-2 gap-5">
+        {initialTestimonials.map((t) => (
+          <CodeCard key={t.id} title={`${t.author.toLowerCase().replace(/\s/g, "-")}.txt`}>
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground italic leading-relaxed">
+                <span className="text-syntax-comment">"</span>
+                {t.content}
+                <span className="text-syntax-comment">"</span>
+              </p>
+              <div className="flex items-center gap-3 pt-2">
+                <div className="relative w-10 h-10 rounded-md overflow-hidden border border-border bg-surface-2">
+                  {t.avatarUrl && (
+                    <Image
+                      src={t.avatarUrl}
+                      alt={t.author}
+                      fill
+                      sizes="40px"
+                      className="object-cover"
+                      unoptimized={t.avatarUrl.includes("/raw/upload/") || t.avatarUrl.endsWith(".svg")}
+                    />
+                  )}
                 </div>
-              </Card>
-            ))}
-          </div>
-        </div>
+                <div>
+                  <div className="text-sm font-medium text-foreground">{t.author}</div>
+                  <div className="text-[11px] text-brand uppercase tracking-wider">{t.role} {t.company && `· ${t.company}`}</div>
+                </div>
+              </div>
+            </div>
+          </CodeCard>
+        ))}
       </div>
     </section>
   );

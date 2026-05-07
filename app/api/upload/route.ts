@@ -26,7 +26,7 @@ export async function POST(req: Request) {
       fileSize: file.size,
     });
 
-    return new Promise((resolve, reject) => {
+    return new Promise<Response>((resolve, reject) => {
       cloudinary.uploader.upload_stream(
         {
           resource_type: "image",
