@@ -29,6 +29,12 @@ export function Experience() {
 			desc: "Architected AI-driven dashboards and integrated complex Node.js APIs. Reduced load times by 25% through advanced code splitting and DB query optimization.",
 		},
 		{
+			year: "Apr 2026 - Current",
+			org: "Nexaus Cloud",
+			title: "Full Stack Engineer",
+			desc: "Designing and implementing scalable, modular, and high-performance backend services while building and optimizing production infrastructure, including containerized services, CI/CD workflows, caching strategies, background job processing, and cloud-based environments.",
+		},
+		{
 			year: "2026 & Beyond",
 			org: "Future-Focused",
 			title: "Architecting High-Impact Solutions",
