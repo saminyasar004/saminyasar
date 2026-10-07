@@ -34,25 +34,25 @@ Git/GitHub, Docker, VS Code, Linux, CI/CD, Netlify/Vercel
 ## Professional Experience
 
 **Full Stack Web Developer**  
-*Joint Ventureαι AI, Dhaka, BD*  May 2024 – Present
+*FeetFirst, Dhaka, BD*  May 2024 – Present
 
--   Built React + TypeScript dashboards with real-time PostgreSQL sync via Node.js APIs
--   Reduced page load by \***\*25%** using code-splitting, lazy loading, and Redis caching
--   Implemented JWT + role-based auth for 10k+ enterprise users
+- Built React + TypeScript dashboards with real-time PostgreSQL sync via Node.js APIs
+- Reduced page load by \***\*25%** using code-splitting, lazy loading, and Redis caching
+- Implemented JWT + role-based auth for 10k+ enterprise users
 
 **Frontend Web Developer**  
 *Noakso Private Ltd., Dhaka, BD*  Nov 2022 – Jun 2024
 
--   Developed responsive React + Tailwind apps for construction & rental platforms
--   Collaborated with UI/UX & backend teams to integrate REST APIs and WebSockets
--   Improved cross-browser compatibility and Lighthouse scores to **90+**
+- Developed responsive React + Tailwind apps for construction & rental platforms
+- Collaborated with UI/UX & backend teams to integrate REST APIs and WebSockets
+- Improved cross-browser compatibility and Lighthouse scores to **90+**
 
 **Freelance MERN Developer**  
 *Fiverr Marketplace*  Jul 2021 – Present
 
--   Delivered **20+** custom MERN projects (e-commerce, SaaS, dashboards)
--   Converted Figma/PSD to responsive React UIs with Tailwind & animations
--   Managed Git workflows and deployed via Netlify with **100%** client satisfaction
+- Delivered **20+** custom MERN projects (e-commerce, SaaS, dashboards)
+- Converted Figma/PSD to responsive React UIs with Tailwind & animations
+- Managed Git workflows and deployed via Netlify with **100%** client satisfaction
 
 ---
 
@@ -84,10 +84,10 @@ HTML/SCSS + Node.js + MongoDB | [GitHub](https://github.com/saminyasar/shortly)
 
 ## Certifications
 
--   React Developer – freeCodeCamp (2024)
--   TypeScript – Udemy (2024)
--   Node.js Developer – freeCodeCamp (2023)
--   Web Dev Contributor – Inventious 4.1, MIST (2025)
+- React Developer – freeCodeCamp (2024)
+- TypeScript – Udemy (2024)
+- Node.js Developer – freeCodeCamp (2023)
+- Web Dev Contributor – Inventious 4.1, MIST (2025)
 
 ---
 
